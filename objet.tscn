@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://f1q1mf0rjomc"]
+
+[ext_resource type="Script" path="res://Flottant.gd" id="1_j1x4p"]
+[ext_resource type="Script" path="res://Temperature.gd" id="2_6hdfq"]
+[ext_resource type="Texture2D" uid="uid://d2qrf75imw08v" path="res://icon.svg" id="2_wbjk6"]
+[ext_resource type="Script" path="res://Friction.gd" id="4_1dbdk"]
+
+[node name="Objet" type="Node2D"]
+position = Vector2(581, 336)
+
+[node name="Flottant" type="Node2D" parent="." groups=["pushable"]]
+script = ExtResource("1_j1x4p")
+
+[node name="Temperature" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("2_6hdfq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_wbjk6")
+
+[node name="Friction" type="Node2D" parent="." groups=["Friction"]]
+script = ExtResource("4_1dbdk")

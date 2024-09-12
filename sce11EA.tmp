@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://l45c0aj8km8g"]
+
+[ext_resource type="Script" path="res://Vent.gd" id="1_jaftv"]
+[ext_resource type="PackedScene" uid="uid://f1q1mf0rjomc" path="res://objet.tscn" id="2_t0ybf"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Vent" type="Node" parent="."]
+script = ExtResource("1_jaftv")
+angle = 3.14
+puissance = 1.0
+
+[node name="Objet" parent="." instance=ExtResource("2_t0ybf")]
+
+[node name="Objet2" parent="." instance=ExtResource("2_t0ybf")]
+position = Vector2(786, 195)

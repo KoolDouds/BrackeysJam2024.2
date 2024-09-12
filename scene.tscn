@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://l45c0aj8km8g"]
+
+[ext_resource type="Script" path="res://Vent.gd" id="1_jaftv"]
+[ext_resource type="Script" path="res://Spawner.gd" id="2_dm7g3"]
+[ext_resource type="Texture2D" uid="uid://d2qrf75imw08v" path="res://icon.svg" id="3_7cllh"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(548, 304)
+script = ExtResource("2_dm7g3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spawner"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("3_7cllh")
+
+[node name="Vent" type="Node2D" parent="Spawner"]
+z_index = -1
+script = ExtResource("1_jaftv")
+angle = 180.0
+puissance = 1.0
