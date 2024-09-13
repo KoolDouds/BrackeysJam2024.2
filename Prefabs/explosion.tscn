@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgipmp6u1gfvt"]
+[gd_scene load_steps=3 format=3 uid="uid://cgipmp6u1gfvt"]
+
+[ext_resource type="Script" path="res://Script/EmitOnSpawn.gd" id="1_sqj1x"]
 
 [sub_resource type="Gradient" id="Gradient_qcqsg"]
 offsets = PackedFloat32Array(0, 0.915916, 1)
@@ -19,3 +21,6 @@ initial_velocity_max = 321.43
 scale_amount_min = 3.0
 scale_amount_max = 7.0
 color_initial_ramp = SubResource("Gradient_qcqsg")
+
+[node name="EmitOnSpawn" type="Node2D" parent="."]
+script = ExtResource("1_sqj1x")

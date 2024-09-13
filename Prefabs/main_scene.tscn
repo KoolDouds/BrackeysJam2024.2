@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Prefabs/Screen.gd" id="8_rwaf2"]
 [ext_resource type="Script" path="res://Prefabs/DisableViewPortMove.gd" id="9_fet5x"]
 [ext_resource type="Texture2D" uid="uid://s2f3hj8tupay" path="res://Images/UI/TvNoise.jpg" id="11_pqs2a"]
+[ext_resource type="PackedScene" uid="uid://brkydqists1yk" path="res://Prefabs/base.tscn" id="3_j38dw"]
 
 [node name="MainScene" type="Node2D"]
 
