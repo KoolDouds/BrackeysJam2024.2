@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://cnbhtu0gn5hil"]
 
 [ext_resource type="Script" path="res://Prefabs/Zoom.gd" id="2_dvof3"]
-[ext_resource type="PackedScene" uid="uid://5g7ir8us26jd" path="res://monde.tscn" id="2_v5mcd"]
+[ext_resource type="PackedScene" path="res://monde.tscn" id="2_v5mcd"]
 [ext_resource type="Texture2D" uid="uid://bumhhrvj61evj" path="res://Images/UI/Screen.png" id="3_0cx3a"]
 [ext_resource type="Script" path="res://Prefabs/ViewPortMove.gd" id="3_bn4m4"]
 [ext_resource type="Texture2D" uid="uid://cavamldh2p0eg" path="res://Images/UI/CircleSmall.png" id="5_3ds46"]
