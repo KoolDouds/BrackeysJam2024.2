@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnbhtu0gn5hil"]
+[gd_scene load_steps=7 format=3 uid="uid://cnbhtu0gn5hil"]
 
 [ext_resource type="Script" path="res://Script/Spawner.gd" id="1_kopft"]
 [ext_resource type="PackedScene" uid="uid://dqsa7e34lv3of" path="res://Prefabs/map.tscn" id="2_04vi0"]
+[ext_resource type="Texture2D" uid="uid://bumhhrvj61evj" path="res://Images/UI/Screen.png" id="3_0cx3a"]
+[ext_resource type="Script" path="res://Prefabs/ViewPortMove.gd" id="3_bn4m4"]
+[ext_resource type="PackedScene" uid="uid://bhef3efxsihtt" path="res://Prefabs/scene.tscn" id="3_ki68x"]
+[ext_resource type="Script" path="res://Script/FullscreenToggle.gd" id="6_apyoi"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -10,3 +14,32 @@ position = Vector2(574, 334)
 script = ExtResource("1_kopft")
 
 [node name="Map" parent="." instance=ExtResource("2_04vi0")]
+
+[node name="ViewPort" type="Node2D" parent="."]
+position = Vector2(480, 270)
+script = ExtResource("3_bn4m4")
+
+[node name="Camera2D" type="Camera2D" parent="ViewPort"]
+
+[node name="Screen" type="Sprite2D" parent="ViewPort/Camera2D"]
+position = Vector2(20, 114)
+scale = Vector2(0.779694, 0.779693)
+texture = ExtResource("3_0cx3a")
+
+[node name="Control" type="Control" parent="ViewPort/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -478.0
+offset_top = -272.0
+offset_right = 481.0
+offset_bottom = 272.0
+
+[node name="EcranPrediction" parent="ViewPort/Camera2D/Control" instance=ExtResource("3_ki68x")]
+layout_mode = 1
+offset_left = 985.0
+offset_top = 44.0
+offset_right = 704.0
+offset_bottom = -77.0
+
+[node name="FulscreenToggle" type="Node" parent="."]
+script = ExtResource("6_apyoi")

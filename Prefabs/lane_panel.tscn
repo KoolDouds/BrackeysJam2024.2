@@ -4,20 +4,28 @@
 [ext_resource type="PackedScene" uid="uid://dh5na76ijnv21" path="res://Prefabs/auto_release.tscn" id="2_uwfjn"]
 
 [node name="LanePanel" type="Panel"]
-offset_right = 335.0
-offset_bottom = 649.0
+anchors_preset = -1
+anchor_right = 0.349
+anchor_bottom = 1.0
+offset_right = -0.0400085
+offset_bottom = 1.0
 
 [node name="Lane" parent="." instance=ExtResource("1_e72xw")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.725
+offset_bottom = -0.225006
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 17.0
-offset_top = 498.0
-offset_right = -23.0
-offset_bottom = -25.0
+offset_left = 21.0
+offset_top = 421.0
+offset_right = -19.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
@@ -50,6 +58,16 @@ layout_mode = 2
 text = "Mesure"
 
 [node name="auto_release" parent="VBoxContainer/But_mesure" instance=ExtResource("2_uwfjn")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/DecreasePrecision" to="Lane" method="press_decrease_precision"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/IncreasePrecision" to="Lane" method="press_increase_precision"]
