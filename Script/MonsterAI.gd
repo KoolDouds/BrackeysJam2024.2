@@ -19,14 +19,18 @@ enum MonsterState {
 func _process(delta):
 	match state:
 		MonsterState.MOVING:
-			mover.set_destination(move_target.global_position, speed)
+			if move_target != null:
+				mover.set_destination(move_target.global_position, speed)
 			update_state()
 			
 		MonsterState.ATTACKING:
 			timer += delta
+			if attack_target == null: timer = 0
 			if timer > hit_cooldown:
-				print("MIAOUUU, ATTAAAAAACK")
-				# attack
+				var hittables := attack_target.find_children("*", "Hittable")
+				if len(hittables) > 0:
+					print("hit!!!!")
+					hittables[0].hit(5)
 				timer = 0.0
 			update_state()
 

@@ -10,4 +10,4 @@ func hit(dmg: int):
 		die()
 
 func die():
-	queue_free()
+	$"..".queue_free()
