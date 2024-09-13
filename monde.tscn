@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://5g7ir8us26jd"]
+
+[ext_resource type="Script" path="res://Script/Spawner.gd" id="1_i8ecj"]
+[ext_resource type="PackedScene" uid="uid://dqsa7e34lv3of" path="res://Prefabs/map.tscn" id="2_7yt85"]
+
+[node name="Monde" type="Node2D"]
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(574, 334)
+script = ExtResource("1_i8ecj")
+
+[node name="Map" parent="." instance=ExtResource("2_7yt85")]
