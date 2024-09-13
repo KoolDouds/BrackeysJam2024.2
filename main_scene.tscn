@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnbhtu0gn5hil"]
+
+[ext_resource type="Script" path="res://Spawner.gd" id="1_kopft"]
+[ext_resource type="PackedScene" uid="uid://dqsa7e34lv3of" path="res://map.tscn" id="2_04vi0"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(574, 334)
+script = ExtResource("1_kopft")
+
+[node name="Map" parent="." instance=ExtResource("2_04vi0")]
