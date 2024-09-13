@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2d38xd3spm00"]
+
+[ext_resource type="PackedScene" uid="uid://2k2wyadgbmuy" path="res://lane.tscn" id="1_e72xw"]
+[ext_resource type="Script" path="res://ButtonAutoRelease.gd" id="2_e24t8"]
+
+[node name="LanePanel" type="Panel"]
+offset_right = 335.0
+offset_bottom = 649.0
+
+[node name="Lane" parent="." instance=ExtResource("1_e72xw")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 498.0
+offset_right = -23.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+
+[node name="But_mesure" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Mesure"
+
+[node name="auto_release" type="Control" parent="VBoxContainer/But_mesure"]
+anchors_preset = 0
+offset_left = -17.0
+offset_top = -593.0
+offset_right = 23.0
+offset_bottom = -553.0
+script = ExtResource("2_e24t8")
+
+[connection signal="pressed" from="VBoxContainer/But_mesure" to="Lane" method="press_mesure"]
