@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjscbrsqjsx0i"]
 
-[ext_resource type="Script" path="res://PredicitionUI.gd" id="1_hlcsa"]
-[ext_resource type="PackedScene" uid="uid://b2d38xd3spm00" path="res://lane_panel.tscn" id="2_xrrkc"]
+[ext_resource type="Script" path="res://Script/PredicitionUI.gd" id="1_tdrme"]
+[ext_resource type="PackedScene" uid="uid://b2d38xd3spm00" path="res://Prefabs/lane_panel.tscn" id="2_xrrkc"]
 
 [node name="PredicitonUI" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_hlcsa")
+script = ExtResource("1_tdrme")
 
 [node name="Lanes" type="HBoxContainer" parent="."]
 layout_mode = 1

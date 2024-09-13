@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dh5na76ijnv21"]
 
-[ext_resource type="Script" path="res://ButtonAutoRelease.gd" id="1_lrhn0"]
+[ext_resource type="Script" path="res://Script/ButtonAutoRelease.gd" id="1_lrhn0"]
 
 [node name="auto_release" type="Control"]
 layout_mode = 3

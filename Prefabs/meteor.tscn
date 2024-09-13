@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ct6bkrtt3hhbf"]
 
-[ext_resource type="Script" path="res://Mover.gd" id="1_glyng"]
-[ext_resource type="Texture2D" uid="uid://d2qrf75imw08v" path="res://icon.svg" id="2_u3gtt"]
-[ext_resource type="Script" path="res://Fall.gd" id="3_kqr5d"]
+[ext_resource type="Script" path="res://Script/Mover.gd" id="1_glyng"]
+[ext_resource type="Texture2D" uid="uid://d2qrf75imw08v" path="res://Images/icon.svg" id="2_u3gtt"]
+[ext_resource type="Script" path="res://Script/Fall.gd" id="3_kqr5d"]
 
 [node name="Meteor" type="Node2D"]
 

@@ -2,7 +2,7 @@ extends Node2D
 
 
 @onready var mover := $"../Mover"
-@onready var explosion := preload("res://explosion.tscn")
+@onready var explosion := preload("res://Prefabs/explosion.tscn")
 
 var fall_speed := 1000.0
 var target_pos := Vector2.ZERO

@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var meteor := preload("res://meteor.tscn")
+
+@onready var meteor := preload("res://Prefabs/meteor.tscn")
 var timer := 0.0
 
 func _process(delta):

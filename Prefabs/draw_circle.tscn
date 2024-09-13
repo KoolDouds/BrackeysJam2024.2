@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwfk5wifwh7gh"]
 
-[ext_resource type="Script" path="res://DrawCircle.gd" id="1_t6hcm"]
+[ext_resource type="Script" path="res://Script/DrawCircle.gd" id="1_t6hcm"]
 
 [node name="DrawCircle" type="Control"]
 layout_mode = 3
