@@ -10,3 +10,6 @@ position = Vector2(574, 334)
 script = ExtResource("1_kopft")
 
 [node name="Map" parent="." instance=ExtResource("2_04vi0")]
+
+[node name="TargetPoint" type="Node2D" parent="."]
+position = Vector2(578, 332)

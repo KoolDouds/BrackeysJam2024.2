@@ -10,12 +10,15 @@ func _process(delta):
 		timer = 0.0
 		var target_pos := position + Vector2(randf_range(-400, 400), randf_range(-400, 400))
 		var height := randi_range(1000, 10000)
-		spawn(target_pos, height)
+		spawn(target_pos, height, 1000.0, 1)
 
-func spawn(target_pos: Vector2, height: int, speed := 1000.0):
+func spawn(target_pos: Vector2, height: int, speed := 1000.0, monster_count := 0):
 	var inst := meteor.instantiate()
 	inst.position = target_pos + Vector2.UP * height
+	
 	var fall := inst.get_node("Fall")
 	fall.target_pos = target_pos
 	fall.fall_speed = speed
+	fall.monster_count = monster_count
+	
 	get_tree().current_scene.add_child(inst)
