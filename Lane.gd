@@ -28,7 +28,6 @@ func _draw():
 	draw_line(
 		impact_point.position,
 		meteor.position,Color.WHITE,3)
-	print(error_radius)
 
 func init_random_height():
 	var disp_h = 0.3
@@ -55,6 +54,9 @@ func decrease_h(decrease : float):
 
 func set_h(value : float):
 	meteor_h = clamp(value, 0, 1)
+
+func press_mesure():
+	mesure(angle)
 
 func mesure(precision_angle : float):
 	error_radius = meteor_h * tan(deg_to_rad(precision_angle)) * MAX_ERROR
