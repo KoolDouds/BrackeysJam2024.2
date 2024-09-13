@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnbhtu0gn5hil"]
+[gd_scene load_steps=4 format=3 uid="uid://cnbhtu0gn5hil"]
 
 [ext_resource type="Script" path="res://Script/Spawner.gd" id="1_kopft"]
 [ext_resource type="PackedScene" uid="uid://dqsa7e34lv3of" path="res://Prefabs/map.tscn" id="2_04vi0"]
+[ext_resource type="PackedScene" uid="uid://brkydqists1yk" path="res://Prefabs/base.tscn" id="3_j38dw"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -11,5 +12,8 @@ script = ExtResource("1_kopft")
 
 [node name="Map" parent="." instance=ExtResource("2_04vi0")]
 
-[node name="TargetPoint" type="Node2D" parent="."]
-position = Vector2(578, 332)
+[node name="Base" parent="." instance=ExtResource("3_j38dw")]
+position = Vector2(570, 333)
+
+[node name="TargetPoint" type="Node2D" parent="Base"]
+position = Vector2(8, -1)
