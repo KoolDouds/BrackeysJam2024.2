@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnbhtu0gn5hil"]
+[gd_scene load_steps=8 format=3 uid="uid://cnbhtu0gn5hil"]
 
 [ext_resource type="Script" path="res://Script/Spawner.gd" id="1_kopft"]
 [ext_resource type="PackedScene" uid="uid://dqsa7e34lv3of" path="res://Prefabs/map.tscn" id="2_04vi0"]
 [ext_resource type="Texture2D" uid="uid://bumhhrvj61evj" path="res://Images/UI/Screen.png" id="3_0cx3a"]
 [ext_resource type="Script" path="res://Prefabs/ViewPortMove.gd" id="3_bn4m4"]
-[ext_resource type="PackedScene" uid="uid://bhef3efxsihtt" path="res://Prefabs/scene.tscn" id="3_ki68x"]
+[ext_resource type="Script" path="res://Script/PredicitionUI.gd" id="5_3tpgk"]
 [ext_resource type="Script" path="res://Script/FullscreenToggle.gd" id="6_apyoi"]
+[ext_resource type="PackedScene" uid="uid://b2d38xd3spm00" path="res://Prefabs/lane_panel.tscn" id="6_rgtqo"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -22,6 +23,8 @@ script = ExtResource("3_bn4m4")
 [node name="Camera2D" type="Camera2D" parent="ViewPort"]
 
 [node name="Screen" type="Sprite2D" parent="ViewPort/Camera2D"]
+z_index = 1000
+z_as_relative = false
 position = Vector2(20, 114)
 scale = Vector2(0.779694, 0.779693)
 texture = ExtResource("3_0cx3a")
@@ -29,17 +32,51 @@ texture = ExtResource("3_0cx3a")
 [node name="Control" type="Control" parent="ViewPort/Camera2D"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -478.0
-offset_top = -272.0
-offset_right = 481.0
-offset_bottom = 272.0
+offset_left = -253.0
+offset_top = -204.0
+offset_right = 236.0
+offset_bottom = 173.0
 
-[node name="EcranPrediction" parent="ViewPort/Camera2D/Control" instance=ExtResource("3_ki68x")]
+[node name="EcranPrediction" type="Control" parent="ViewPort/Camera2D/Control"]
 layout_mode = 1
-offset_left = 985.0
-offset_top = 44.0
-offset_right = 704.0
-offset_bottom = -77.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 30.0
+offset_right = -44.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PredicitonUI" type="Control" parent="ViewPort/Camera2D/Control/EcranPrediction"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_3tpgk")
+
+[node name="Lanes" type="HBoxContainer" parent="ViewPort/Camera2D/Control/EcranPrediction/PredicitonUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LanePanel" parent="ViewPort/Camera2D/Control/EcranPrediction/PredicitonUI/Lanes" instance=ExtResource("6_rgtqo")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LanePanel2" parent="ViewPort/Camera2D/Control/EcranPrediction/PredicitonUI/Lanes" instance=ExtResource("6_rgtqo")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LanePanel3" parent="ViewPort/Camera2D/Control/EcranPrediction/PredicitonUI/Lanes" instance=ExtResource("6_rgtqo")]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="FulscreenToggle" type="Node" parent="."]
 script = ExtResource("6_apyoi")

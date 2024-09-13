@@ -2,11 +2,5 @@
 
 [ext_resource type="Script" path="res://Script/ButtonAutoRelease.gd" id="1_lrhn0"]
 
-[node name="auto_release" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -17.0
-offset_top = -593.0
-offset_right = 23.0
-offset_bottom = -553.0
+[node name="auto_release" type="Node"]
 script = ExtResource("1_lrhn0")

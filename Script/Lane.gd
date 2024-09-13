@@ -17,23 +17,27 @@ func _draw():
 	var col := Color(0,1,1,0.2)
 	var pixel_h = abs(sky_point.position.y - impact_point.position.y)
 	var pixel_error_radius = error_radius * pixel_h
+	draw_dashed_line(
+		sky_point.position,
+		impact_point.position,Color(1,1,1,0.1),3)
+
 	draw_line(
 		impact_point.position + Vector2.LEFT*pixel_error_radius,
-		impact_point.position + Vector2.RIGHT*pixel_error_radius,col,55)
+		impact_point.position + Vector2.RIGHT*pixel_error_radius,col,3)
 	draw_line(
 		impact_point.position + Vector2.LEFT*pixel_error_radius,
-		meteor.position,col,3)
+		meteor.position,col,1)
 	draw_line(
 		impact_point.position + Vector2.RIGHT*pixel_error_radius,
-		meteor.position,col,3)
+		meteor.position,col,1)
 	draw_line(
 		impact_point.position,
-		meteor.position,Color.WHITE,3)
+		meteor.position,Color.WHITE,1)
 	
-	draw_arc(meteor.position, 150, 
+	draw_arc(meteor.position, 20, 
 	PI/2.0, 
 	(PI/2.0)-deg_to_rad(angle),
-	10,Color.WHITE, 10)
+	10,Color.WHITE, 1)
 
 func init_random_height():
 	var disp_h = 0.3

@@ -21,6 +21,10 @@ window/size/viewport_width=960
 window/size/viewport_height=540
 window/stretch/mode="canvas_items"
 
+[gui]
+
+theme/custom_font="res://Theme/BasicTheme.tres"
+
 [input]
 
 toggle_fullscreen={
