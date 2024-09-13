@@ -23,11 +23,3 @@ grow_vertical = 2
 [node name="LanePanel" parent="Lanes" instance=ExtResource("2_xrrkc")]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="LanePanel2" parent="Lanes" instance=ExtResource("2_xrrkc")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="LanePanel3" parent="Lanes" instance=ExtResource("2_xrrkc")]
-layout_mode = 2
-size_flags_horizontal = 3
