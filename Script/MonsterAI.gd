@@ -22,7 +22,7 @@ func _process(delta):
 			if move_target != null:
 				mover.set_destination(move_target.global_position, speed)
 			update_state()
-			
+
 		MonsterState.ATTACKING:
 			timer += delta
 			if attack_target == null: timer = 0
