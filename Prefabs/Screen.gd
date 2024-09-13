@@ -15,13 +15,11 @@ func switch_screen():
 
 func switch_to_screen(num):
 	$"../TvNoise".visible = true
-	print("on")
 	
 	await get_tree().create_timer(0.2).timeout
 	
-	set_active_screen(active_screen+1)
+	set_active_screen(num)
 	$"../TvNoise".visible = false
-	print("off")
 
 func set_active_screen(num : int):
 	active_screen = num%screens.size()
