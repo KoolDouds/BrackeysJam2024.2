@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2d38xd3spm00"]
 
 [ext_resource type="PackedScene" uid="uid://2k2wyadgbmuy" path="res://lane.tscn" id="1_e72xw"]
-[ext_resource type="Script" path="res://ButtonAutoRelease.gd" id="2_e24t8"]
+[ext_resource type="PackedScene" uid="uid://dh5na76ijnv21" path="res://auto_release.tscn" id="2_uwfjn"]
 
 [node name="LanePanel" type="Panel"]
 offset_right = 335.0
@@ -22,16 +22,35 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="DecreasePrecision" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Precision -"
+
+[node name="auto_release" parent="VBoxContainer/HBoxContainer/DecreasePrecision" instance=ExtResource("2_uwfjn")]
+offset_top = -628.0
+offset_bottom = -588.0
+
+[node name="IncreasePrecision" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Precision +"
+
+[node name="auto_release" parent="VBoxContainer/HBoxContainer/IncreasePrecision" instance=ExtResource("2_uwfjn")]
+offset_top = -628.0
+offset_bottom = -588.0
+
 [node name="But_mesure" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Mesure"
 
-[node name="auto_release" type="Control" parent="VBoxContainer/But_mesure"]
-anchors_preset = 0
-offset_left = -17.0
-offset_top = -593.0
-offset_right = 23.0
-offset_bottom = -553.0
-script = ExtResource("2_e24t8")
+[node name="auto_release" parent="VBoxContainer/But_mesure" instance=ExtResource("2_uwfjn")]
 
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/DecreasePrecision" to="Lane" method="press_decrease_precision"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/IncreasePrecision" to="Lane" method="press_increase_precision"]
 [connection signal="pressed" from="VBoxContainer/But_mesure" to="Lane" method="press_mesure"]
