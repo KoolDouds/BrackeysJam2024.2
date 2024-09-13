@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjscbrsqjsx0i"]
+
+[ext_resource type="Script" path="res://fall.gd" id="1_jm4pn"]
+[ext_resource type="PackedScene" uid="uid://2k2wyadgbmuy" path="res://lane.tscn" id="2_6r21u"]
+
+[node name="PredicitonUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jm4pn")
+
+[node name="Lane" parent="." instance=ExtResource("2_6r21u")]
+
+[node name="Lane2" parent="." instance=ExtResource("2_6r21u")]
+offset_left = 291.0
+offset_right = 331.0
+
+[node name="Lane3" parent="." instance=ExtResource("2_6r21u")]
+offset_left = 555.0
+offset_right = 595.0
