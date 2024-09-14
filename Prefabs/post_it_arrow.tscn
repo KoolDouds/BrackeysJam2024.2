@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj5rjb3o2q6lf"]
+
+[ext_resource type="Texture2D" uid="uid://cpagi52a2flkq" path="res://Images/UI/FlechePostIt.png" id="1_c0bkb"]
+
+[node name="PostItArrow" type="TextureRect"]
+anchors_preset = -1
+anchor_left = 0.457
+anchor_top = 0.264
+anchor_right = 0.457
+anchor_bottom = 0.264
+offset_left = -76.4835
+offset_top = -43.8328
+offset_right = 76.5165
+offset_bottom = 44.1672
+texture = ExtResource("1_c0bkb")
+expand_mode = 1
+stretch_mode = 4

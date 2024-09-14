@@ -1,27 +1,72 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnbhtu0gn5hil"]
+[gd_scene load_steps=41 format=3 uid="uid://cnbhtu0gn5hil"]
 
 [ext_resource type="Script" path="res://Prefabs/Zoom.gd" id="2_dvof3"]
 [ext_resource type="PackedScene" uid="uid://5g7ir8us26jd" path="res://monde.tscn" id="2_v5mcd"]
 [ext_resource type="Texture2D" uid="uid://bumhhrvj61evj" path="res://Images/UI/Screen.png" id="3_0cx3a"]
 [ext_resource type="Script" path="res://Prefabs/ViewPortMove.gd" id="3_bn4m4"]
+[ext_resource type="Script" path="res://Prefabs/Café.gd" id="4_i6uel"]
 [ext_resource type="Texture2D" uid="uid://cavamldh2p0eg" path="res://Images/UI/CircleSmall.png" id="5_3ds46"]
 [ext_resource type="Script" path="res://Script/PredicitionUI.gd" id="5_3tpgk"]
+[ext_resource type="Texture2D" uid="uid://dkcx4p0gdcars" path="res://Images/UI/tasse.png" id="5_k6b46"]
 [ext_resource type="Script" path="res://Script/FullscreenToggle.gd" id="6_apyoi"]
+[ext_resource type="Texture2D" uid="uid://ccjcosaej75ip" path="res://Images/UI/tasseHL.png" id="6_e8xdt"]
 [ext_resource type="Script" path="res://Prefabs/VisibleIfHover.gd" id="6_rbisx"]
 [ext_resource type="PackedScene" uid="uid://b2d38xd3spm00" path="res://Prefabs/lane_panel.tscn" id="6_rgtqo"]
 [ext_resource type="PackedScene" uid="uid://dh5na76ijnv21" path="res://Prefabs/auto_release.tscn" id="7_832ic"]
+[ext_resource type="Texture2D" uid="uid://bfble8f6gpbup" path="res://Images/UI/Languette.png" id="8_n7a6f"]
 [ext_resource type="Script" path="res://Prefabs/Screen.gd" id="8_rwaf2"]
+[ext_resource type="Texture2D" uid="uid://dmrji4fbfpa4g" path="res://Images/UI/Slurp.png" id="9_1u4tp"]
 [ext_resource type="Script" path="res://Prefabs/DisableViewPortMove.gd" id="9_fet5x"]
+[ext_resource type="Texture2D" uid="uid://d3h1xnkxeontw" path="res://Images/UI/LanguetteScribbles.png" id="9_s5hpl"]
+[ext_resource type="Script" path="res://Prefabs/TimeBar.gd" id="10_c4aw7"]
+[ext_resource type="Script" path="res://Prefabs/Languette.gd" id="11_ivlqd"]
 [ext_resource type="Texture2D" uid="uid://s2f3hj8tupay" path="res://Images/UI/TvNoise.jpg" id="11_pqs2a"]
+[ext_resource type="Script" path="res://Prefabs/ToggleZoom.gd" id="13_msgmk"]
+[ext_resource type="Script" path="res://Prefabs/Time.gd" id="16_dwehy"]
+[ext_resource type="Shader" path="res://Theme/main_scene.gdshader" id="18_ceoa3"]
+[ext_resource type="Shader" path="res://Theme/add_and_sinfade.gdshader" id="18_qp5qm"]
+[ext_resource type="Texture2D" uid="uid://0rwh880p20dk" path="res://Images/UI/ScreenLight.png" id="19_osecn"]
+[ext_resource type="Shader" path="res://Theme/Specular.gdshader" id="22_ymqka"]
+[ext_resource type="Texture2D" uid="uid://dcm1adha27av7" path="res://Images/UI/ScreenSpecular.png" id="23_hes3o"]
+[ext_resource type="Shader" path="res://Prefabs/main_scene.gdshader" id="23_pdm8q"]
+[ext_resource type="VideoStream" path="res://Images/UI/SHAMELESS.ogv" id="23_s5l6v"]
+[ext_resource type="Shader" path="res://hard_noise.gdshader" id="25_nomdk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ei8w"]
+shader = ExtResource("22_ymqka")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_oh82k"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nqv5m"]
+seamless = true
+noise = SubResource("FastNoiseLite_oh82k")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ip8om"]
+shader = ExtResource("18_qp5qm")
+shader_parameter/alpha = 0.5
+shader_parameter/noise = SubResource("NoiseTexture2D_nqv5m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qeftp"]
+shader = ExtResource("18_ceoa3")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_bh3jj"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5e7px"]
+shader = ExtResource("18_ceoa3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ravuu"]
+shader = ExtResource("23_pdm8q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3njpk"]
+shader = ExtResource("25_nomdk")
 
 [node name="MainScene" type="Node2D"]
 
 [node name="SubViewport" type="SubViewport" parent="."]
 disable_3d = true
 handle_input_locally = false
+size = Vector2i(512, 384)
 render_target_update_mode = 4
 
 [node name="ViewPort" type="Node2D" parent="SubViewport" groups=["ViewPort"]]
@@ -39,30 +84,96 @@ position = Vector2(467, 273)
 script = ExtResource("3_bn4m4")
 move_enabled = false
 
-[node name="Camera2D" type="Camera2D" parent="ViewPort"]
+[node name="OverTvt" type="Control" parent="ViewPort"]
+z_index = 1100
+z_as_relative = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="TV" type="Sprite2D" parent="ViewPort/Camera2D"]
+[node name="Café" type="Button" parent="ViewPort/OverTvt"]
+layout_mode = 0
+offset_left = -430.0
+offset_top = 103.0
+offset_right = -173.0
+offset_bottom = 367.0
+flat = true
+script = ExtResource("4_i6uel")
+metadata/_edit_group_ = true
+
+[node name="auto_release" parent="ViewPort/OverTvt/Café" instance=ExtResource("7_832ic")]
+
+[node name="TasseTex" type="TextureRect" parent="ViewPort/OverTvt/Café"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_k6b46")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TassHighlight" type="TextureRect" parent="ViewPort/OverTvt/Café"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_e8xdt")
+expand_mode = 1
+stretch_mode = 4
+script = ExtResource("6_rbisx")
+
+[node name="Slurp" type="TextureRect" parent="ViewPort/OverTvt"]
+visible = false
+layout_mode = 0
+offset_left = -238.0
+offset_top = -47.0
+offset_right = 77.0
+offset_bottom = 116.0
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("9_1u4tp")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TV" type="Sprite2D" parent="ViewPort"]
 z_index = 1000
 z_as_relative = false
 position = Vector2(20, 114)
 scale = Vector2(0.779694, 0.779693)
 texture = ExtResource("3_0cx3a")
+metadata/_edit_lock_ = true
 
-[node name="CycleScreens" type="Button" parent="ViewPort/Camera2D/TV"]
+[node name="Specular" type="TextureRect" parent="ViewPort/TV"]
+material = SubResource("ShaderMaterial_2ei8w")
+offset_left = -355.413
+offset_top = -454.282
+offset_right = 225.587
+offset_bottom = 143.718
+texture = ExtResource("23_hes3o")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CycleScreens" type="Button" parent="ViewPort/TV"]
 offset_left = 344.0
 offset_top = -21.0
 offset_right = 449.0
 offset_bottom = 78.0
 flat = true
 
-[node name="VisibleIfHover" type="Control" parent="ViewPort/Camera2D/TV/CycleScreens"]
+[node name="VisibleIfHover" type="Control" parent="ViewPort/TV/CycleScreens"]
+z_index = 1005
+z_as_relative = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("6_rbisx")
 
-[node name="TextureRect" type="TextureRect" parent="ViewPort/Camera2D/TV/CycleScreens/VisibleIfHover"]
+[node name="TextureRect" type="TextureRect" parent="ViewPort/TV/CycleScreens/VisibleIfHover"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -77,9 +188,76 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("5_3ds46")
 stretch_mode = 5
 
-[node name="auto_release" parent="ViewPort/Camera2D/TV/CycleScreens" instance=ExtResource("7_832ic")]
+[node name="auto_release" parent="ViewPort/TV/CycleScreens" instance=ExtResource("7_832ic")]
 
-[node name="Screen" type="Control" parent="ViewPort/Camera2D"]
+[node name="Time" type="Control" parent="ViewPort/TV"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -626.0
+offset_top = -448.0
+offset_right = -435.0
+offset_bottom = 100.0
+
+[node name="Languette" type="Control" parent="ViewPort/TV/Time" groups=["Languette"]]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_right = 12.0
+offset_bottom = -55.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("11_ivlqd")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ViewPort/TV/Time/Languette"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -13.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+max_value = 12.0
+step = 0.0
+value = 12.0
+fill_mode = 2
+texture_under = ExtResource("8_n7a6f")
+texture_progress = ExtResource("9_s5hpl")
+script = ExtResource("10_c4aw7")
+
+[node name="Top" type="Control" parent="ViewPort/TV/Time/Languette"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -50.0196
+offset_right = -10.0196
+offset_bottom = 40.0
+
+[node name="Bottom" type="Control" parent="ViewPort/TV/Time/Languette"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0196
+offset_top = -40.0
+offset_right = -10.0196
+offset_bottom = 3.05176e-05
+grow_vertical = 0
+
+[node name="Light" type="TextureRect" parent="ViewPort/TV"]
+material = SubResource("ShaderMaterial_ip8om")
+offset_left = -854.182
+offset_top = -760.556
+offset_right = 852.818
+offset_bottom = 757.444
+mouse_filter = 2
+texture = ExtResource("19_osecn")
+
+[node name="Screen" type="Control" parent="ViewPort"]
 z_index = 500
 layout_mode = 3
 anchors_preset = 0
@@ -87,31 +265,34 @@ offset_left = -253.0
 offset_top = -204.0
 offset_right = 236.0
 offset_bottom = 173.0
-metadata/_edit_group_ = true
 
-[node name="Channels" type="Control" parent="ViewPort/Camera2D/Screen"]
+[node name="Channels" type="Control" parent="ViewPort/Screen"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 489.0
 offset_bottom = 377.0
 script = ExtResource("8_rwaf2")
-metadata/_edit_group_ = true
+brightness = Array[float]([0.1, 0.3, 0.5])
 
-[node name="Rien" type="Control" parent="ViewPort/Camera2D/Screen/Channels"]
+[node name="Rien" type="Control" parent="ViewPort/Screen/Channels"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SetViewPortMove" type="Node" parent="ViewPort/Camera2D/Screen/Channels/Rien"]
+[node name="SetViewPortMove" type="Node" parent="ViewPort/Screen/Channels/Rien"]
 script = ExtResource("9_fet5x")
 
-[node name="TextureRect" type="TextureRect" parent="ViewPort/Camera2D/Screen/Channels/Rien"]
+[node name="TextureRect" type="TextureRect" parent="ViewPort/Screen/Channels/Rien"]
+material = SubResource("ShaderMaterial_qeftp")
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -19.0
+offset_top = -8.0
+offset_right = 493.0
+offset_bottom = 376.0
 texture = SubResource("ViewportTexture_bh3jj")
+stretch_mode = 4
 
-[node name="EcranPrediction" type="Control" parent="ViewPort/Camera2D/Screen/Channels"]
+[node name="EcranPrediction" type="Control" parent="ViewPort/Screen/Channels"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -124,7 +305,7 @@ offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="ViewPort/Camera2D/Screen/Channels/EcranPrediction"]
+[node name="ColorRect" type="ColorRect" parent="ViewPort/Screen/Channels/EcranPrediction"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -137,7 +318,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0156863, 0.0196078, 0.0666667, 1)
 
-[node name="PredicitonUI" type="Control" parent="ViewPort/Camera2D/Screen/Channels/EcranPrediction"]
+[node name="PredicitonUI" type="Control" parent="ViewPort/Screen/Channels/EcranPrediction"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -150,7 +331,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_3tpgk")
 
-[node name="Lanes" type="HBoxContainer" parent="ViewPort/Camera2D/Screen/Channels/EcranPrediction/PredicitonUI"]
+[node name="Lanes" type="HBoxContainer" parent="ViewPort/Screen/Channels/EcranPrediction/PredicitonUI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -158,22 +339,56 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LanePanel" parent="ViewPort/Camera2D/Screen/Channels/EcranPrediction/PredicitonUI/Lanes" instance=ExtResource("6_rgtqo")]
+[node name="LanePanel" parent="ViewPort/Screen/Channels/EcranPrediction/PredicitonUI/Lanes" instance=ExtResource("6_rgtqo")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LanePanel2" parent="ViewPort/Camera2D/Screen/Channels/EcranPrediction/PredicitonUI/Lanes" instance=ExtResource("6_rgtqo")]
+[node name="LanePanel2" parent="ViewPort/Screen/Channels/EcranPrediction/PredicitonUI/Lanes" instance=ExtResource("6_rgtqo")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LanePanel3" parent="ViewPort/Camera2D/Screen/Channels/EcranPrediction/PredicitonUI/Lanes" instance=ExtResource("6_rgtqo")]
+[node name="LanePanel3" parent="ViewPort/Screen/Channels/EcranPrediction/PredicitonUI/Lanes" instance=ExtResource("6_rgtqo")]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TvNoise" type="TextureRect" parent="ViewPort/Camera2D/Screen"]
+[node name="Kitty" type="Control" parent="ViewPort/Screen/Channels"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="ViewPort/Screen/Channels/Kitty"]
+material = SubResource("ShaderMaterial_5e7px")
+layout_mode = 0
+offset_left = 475.0
+offset_top = -194.0
+offset_right = 1376.0
+offset_bottom = 264.0
+rotation = 1.5708
+stream = ExtResource("23_s5l6v")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
+
+[node name="GrainNoise" type="TextureRect" parent="ViewPort/Screen"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ravuu")
+layout_mode = 0
+offset_left = -37.8431
+offset_top = 5.02136
+offset_right = 663.157
+offset_bottom = 627.021
+mouse_filter = 2
+texture = ExtResource("11_pqs2a")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TvNoise" type="TextureRect" parent="ViewPort/Screen"]
 visible = false
 z_index = 900
 z_as_relative = false
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3njpk")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -185,10 +400,21 @@ offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.895, 0.895)
+mouse_filter = 2
 texture = ExtResource("11_pqs2a")
+
+[node name="Camera2D" type="Camera2D" parent="ViewPort"]
+script = ExtResource("13_msgmk")
+zooms = Array[float]([0.85, 1.45])
+pos = Array[Vector2]([Vector2(0, 10), Vector2(-5, -15)])
+
+[node name="Time" type="Node" parent="ViewPort" groups=["Time"]]
+script = ExtResource("16_dwehy")
 
 [node name="FulscreenToggle" type="Node" parent="."]
 script = ExtResource("6_apyoi")
 
-[connection signal="pressed" from="ViewPort/Camera2D/TV/CycleScreens" to="ViewPort/Camera2D/Screen/Channels" method="switch_screen"]
-[connection signal="visibility_changed" from="ViewPort/Camera2D/Screen/Channels/Rien" to="ViewPort/Camera2D/Screen/Channels/Rien/SetViewPortMove" method="_on_rien_visibility_changed"]
+[connection signal="button_down" from="ViewPort/OverTvt/Café" to="ViewPort/OverTvt/Café" method="start_drinking"]
+[connection signal="button_down" from="ViewPort/OverTvt/Café" to="ViewPort/Time" method="skip_time"]
+[connection signal="pressed" from="ViewPort/TV/CycleScreens" to="ViewPort/Screen/Channels" method="switch_screen"]
+[connection signal="visibility_changed" from="ViewPort/Screen/Channels/Rien" to="ViewPort/Screen/Channels/Rien/SetViewPortMove" method="_on_rien_visibility_changed"]

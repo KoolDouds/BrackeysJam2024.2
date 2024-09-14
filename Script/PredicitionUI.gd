@@ -11,10 +11,7 @@ func _ready():
 				lanes.append(pc)
 				pc.init_random_height()
 
-func _process(delta):
-	if (Input.is_action_just_pressed("ui_accept")):
-		fall()
 
-func fall():
+func fall(time : float):
 	for l in lanes:
-		l.fall_h(0.1)
+		l.fall_h(time/12)

@@ -5,5 +5,7 @@ extends Node
 func _ready():
 	$"..".pressed.connect(press)
 
+
 func press():
+
 	$"..".release_focus()
