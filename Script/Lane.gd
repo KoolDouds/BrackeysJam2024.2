@@ -12,7 +12,7 @@ var MAX_ERROR := 300
 
 var angle : float = 20.0
 var error_radius : float = 0
-var predictions : Array[Vector2] = []
+var predictions : Array[Prediction] = []
 
 var time_of_impact : float
 
@@ -57,6 +57,7 @@ func init_random_height():
 func update_time_of_impact():
 	time_of_impact = meteor_h*12
 	get_tree().get_first_node_in_group("Languette").add_post_it(time_of_impact)
+	get_tree().get_first_node_in_group("Time").add_time_impact(meteor_id, time_of_impact)
 
 func _process(delta):
 	if (Input.is_action_just_pressed("ui_page_down")):
@@ -96,6 +97,7 @@ func mesure():
 	var error_radius_meter := error_radius * 1000
 	var dir := Vector2.from_angle(randf()*2*PI)
 	var error_normalize : float = randf()
-	var predicition : Vector2 = meteor_coord + dir * error_radius_meter * error_normalize
-	predictions.append(predicition)
-	field.add_prediction(meteor_id, predicition, error_radius_meter)
+	var predicition_coord : Vector2 = meteor_coord + dir * error_radius_meter * error_normalize
+	var prediction := Prediction.new(meteor_id,predicition_coord,error_radius_meter)
+	predictions.append(prediction)
+	field.add_prediction(meteor_id, prediction)

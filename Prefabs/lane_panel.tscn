@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2d38xd3spm00"]
+[gd_scene load_steps=7 format=3 uid="uid://b2d38xd3spm00"]
 
 [ext_resource type="Script" path="res://Script/Lane.gd" id="1_k8sbp"]
 [ext_resource type="PackedScene" uid="uid://bwfk5wifwh7gh" path="res://Prefabs/draw_circle.tscn" id="2_2l6kj"]
 [ext_resource type="PackedScene" uid="uid://dh5na76ijnv21" path="res://Prefabs/auto_release.tscn" id="2_uwfjn"]
 [ext_resource type="Theme" uid="uid://d17rvefvnjqvd" path="res://Theme/BasicTheme.tres" id="2_vbyn4"]
 [ext_resource type="Texture2D" uid="uid://d2qrf75imw08v" path="res://Images/icon.svg" id="3_oyaio"]
+[ext_resource type="Script" path="res://Prefabs/PrecisionLabel.gd" id="4_45v2g"]
 
 [node name="LanePanel" type="Panel"]
 anchors_preset = -1
@@ -20,9 +21,9 @@ layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 0.789
 offset_left = 89.0
-offset_top = 38.0
+offset_top = 19.0
 offset_right = -87.0
-offset_bottom = -14.021
+offset_bottom = -33.021
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k8sbp")
@@ -89,6 +90,13 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 2
 
+[node name="PrecisionLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "PRECISION: [100%]"
+autowrap_mode = 2
+script = ExtResource("4_45v2g")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
@@ -96,7 +104,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_vbyn4")
-text = "Precision -"
+text = "-"
 
 [node name="auto_release" parent="VBoxContainer/HBoxContainer/DecreasePrecision" instance=ExtResource("2_uwfjn")]
 
@@ -104,11 +112,12 @@ text = "Precision -"
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("2_vbyn4")
-text = "Precision +"
+text = "+"
 
 [node name="auto_release" parent="VBoxContainer/HBoxContainer/IncreasePrecision" instance=ExtResource("2_uwfjn")]
 
 [node name="But_mesure" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme = ExtResource("2_vbyn4")
 text = "Mesure"

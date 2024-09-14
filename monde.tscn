@@ -19,6 +19,7 @@ position = Vector2(575, 334)
 
 [node name="ImpactField" type="Node2D" parent="." groups=["ImpactField"]]
 script = ExtResource("4_x3ugw")
+meteor_count = 5
 
 [node name="ImpactZone" type="Node2D" parent="ImpactField"]
 position = Vector2(606, -49)
