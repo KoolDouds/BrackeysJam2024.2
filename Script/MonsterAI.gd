@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var move_target := get_tree().current_scene.find_child("TargetPoint")
+@onready var move_target := get_tree().get_first_node_in_group("TargetPoint")
 @onready var mover := $"../Mover"
 
 var speed := 100.0

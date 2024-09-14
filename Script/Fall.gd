@@ -23,11 +23,11 @@ func _process(delta):
 func die():
 	var explosion_inst := explosion.instantiate()
 	explosion_inst.position = global_position
-	get_tree().current_scene.add_child(explosion_inst)
+	$"../..".add_child(explosion_inst)
 	
 	for i in range(monster_count):
 		var monster_inst := monster.instantiate()
 		monster_inst.position = global_position
-		get_tree().current_scene.add_child(monster_inst)
+		$"../..".add_child(monster_inst)
 	
 	$"..".queue_free()

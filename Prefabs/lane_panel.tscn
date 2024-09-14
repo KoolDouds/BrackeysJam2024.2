@@ -12,6 +12,7 @@ anchor_right = 0.183
 anchor_bottom = 0.535
 offset_right = 0.319992
 offset_bottom = 0.0999756
+size_flags_horizontal = 3
 
 [node name="Lane" type="Control" parent="."]
 z_index = 3

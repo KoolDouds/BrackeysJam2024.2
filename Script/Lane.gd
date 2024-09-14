@@ -3,6 +3,7 @@ class_name Lane extends Control
 @onready var sky_point :Control = $SkyPoint
 @onready var impact_point :Control = $ImpactPoint
 @onready var meteor := $Meteor
+@onready var field : ImpactField = get_tree().get_first_node_in_group("ImpactField")
 
 var meteor_h := 1.0 #height normalisé 0->1
 var meteor_coord : Vector2
@@ -14,6 +15,8 @@ var error_radius : float = 0
 var predictions : Array[Vector2] = []
 
 var time_of_impact : float
+
+var meteor_id : int
 
 func _draw():
 	var col := Color(0,1,1,0.2)
@@ -49,6 +52,7 @@ func init_random_height():
 	meteor.position = impact_point.position.lerp(sky_point.position, meteor_h)
 	update_time_of_impact()
 	update_error()
+
 
 func update_time_of_impact():
 	time_of_impact = meteor_h*12
@@ -89,7 +93,9 @@ func update_error():
 
 func mesure():
 	update_error()
+	var error_radius_meter := error_radius * 1000
 	var dir := Vector2.from_angle(randf()*2*PI)
 	var error_normalize : float = randf()
-	var predicition : Vector2 = meteor_coord + dir * error_radius * error_normalize
+	var predicition : Vector2 = meteor_coord + dir * error_radius_meter * error_normalize
 	predictions.append(predicition)
+	field.add_prediction(meteor_id, predicition, error_radius_meter)

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://5g7ir8us26jd"]
+[gd_scene load_steps=6 format=3 uid="uid://5g7ir8us26jd"]
 
 [ext_resource type="Script" path="res://Script/Spawner.gd" id="1_i8ecj"]
 [ext_resource type="PackedScene" uid="uid://dqsa7e34lv3of" path="res://Prefabs/map.tscn" id="2_7yt85"]
+[ext_resource type="PackedScene" uid="uid://brkydqists1yk" path="res://Prefabs/base.tscn" id="3_kafll"]
+[ext_resource type="Script" path="res://ImpactField.gd" id="4_x3ugw"]
+[ext_resource type="Script" path="res://ImpactZone.gd" id="5_pf2n7"]
 
 [node name="Monde" type="Node2D"]
 
@@ -10,3 +13,37 @@ position = Vector2(574, 334)
 script = ExtResource("1_i8ecj")
 
 [node name="Map" parent="." instance=ExtResource("2_7yt85")]
+
+[node name="Base" parent="." groups=["TargetPoint"] instance=ExtResource("3_kafll")]
+position = Vector2(575, 334)
+
+[node name="ImpactField" type="Node2D" parent="." groups=["ImpactField"]]
+script = ExtResource("4_x3ugw")
+
+[node name="ImpactZone" type="Node2D" parent="ImpactField"]
+position = Vector2(606, -49)
+script = ExtResource("5_pf2n7")
+
+[node name="ImpactZone3" type="Node2D" parent="ImpactField"]
+position = Vector2(246, 84)
+script = ExtResource("5_pf2n7")
+
+[node name="ImpactZone4" type="Node2D" parent="ImpactField"]
+position = Vector2(116, 420)
+script = ExtResource("5_pf2n7")
+
+[node name="ImpactZone5" type="Node2D" parent="ImpactField"]
+position = Vector2(420, 655)
+script = ExtResource("5_pf2n7")
+
+[node name="ImpactZone6" type="Node2D" parent="ImpactField"]
+position = Vector2(785, 652)
+script = ExtResource("5_pf2n7")
+
+[node name="ImpactZone2" type="Node2D" parent="ImpactField"]
+position = Vector2(1033, 377)
+script = ExtResource("5_pf2n7")
+
+[node name="ImpactZone7" type="Node2D" parent="ImpactField"]
+position = Vector2(969, 17)
+script = ExtResource("5_pf2n7")
