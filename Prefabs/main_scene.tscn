@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cnbhtu0gn5hil"]
+[gd_scene load_steps=70 format=3 uid="uid://cnbhtu0gn5hil"]
 
 [ext_resource type="Script" path="res://Script/Zoom.gd" id="2_dvof3"]
 [ext_resource type="PackedScene" uid="uid://5g7ir8us26jd" path="res://monde.tscn" id="2_v5mcd"]
@@ -53,6 +53,9 @@
 [ext_resource type="AudioStream" uid="uid://bdewx3084u5od" path="res://Son/SFX/Up.wav" id="36_2d1nj"]
 [ext_resource type="AudioStream" uid="uid://bi3h62cnwpsr7" path="res://Son/SFX/Down.wav" id="38_31cgi"]
 [ext_resource type="Texture2D" uid="uid://bn2jj76whmi6j" path="res://Images/UI/titre.png" id="46_ji3aj"]
+[ext_resource type="Texture2D" uid="uid://cdt831x0blnca" path="res://Images/UI/gameOver.png" id="49_bkdqq"]
+[ext_resource type="Script" path="res://Prefabs/RestartBut.gd" id="49_cial1"]
+[ext_resource type="Script" path="res://Prefabs/Restart.gd" id="54_1hiy5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ei8w"]
 shader = ExtResource("22_ymqka")
@@ -87,6 +90,9 @@ shader = ExtResource("18_ceoa3")
 shader = ExtResource("18_ceoa3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ravuu"]
+shader = ExtResource("23_pdm8q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y35gc"]
 shader = ExtResource("23_pdm8q")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3njpk"]
@@ -704,6 +710,75 @@ texture = ExtResource("46_ji3aj")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="GameOver" type="TextureRect" parent="ViewPort/Screen" groups=["GameOver"]]
+visible = false
+texture_repeat = 2
+material = SubResource("ShaderMaterial_tnd4f")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 12.0
+offset_right = 47.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.895, 0.895)
+mouse_filter = 0
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GrainNoise2" type="TextureRect" parent="ViewPort/Screen/GameOver"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ravuu")
+layout_mode = 0
+offset_left = -46.7521
+offset_top = -7.79736
+offset_right = 654.248
+offset_bottom = 614.202
+mouse_filter = 2
+texture = ExtResource("11_pqs2a")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GrainNoise4" type="TextureRect" parent="ViewPort/Screen/GameOver"]
+texture_repeat = 2
+layout_mode = 0
+offset_left = -6.0
+offset_top = -4.0
+offset_right = 532.0
+offset_bottom = 411.0
+mouse_filter = 2
+texture = ExtResource("49_bkdqq")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GrainNoise3" type="TextureRect" parent="ViewPort/Screen/GameOver"]
+modulate = Color(0.141176, 0.141176, 0.141176, 0.627451)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_y35gc")
+layout_mode = 0
+offset_left = -46.7521
+offset_top = -7.79736
+offset_right = 654.248
+offset_bottom = 614.202
+mouse_filter = 2
+texture = ExtResource("11_pqs2a")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Restart" type="Button" parent="ViewPort/Screen/GameOver"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 275.0
+offset_right = 318.0
+offset_bottom = 330.0
+text = "/reStart"
+script = ExtResource("49_cial1")
+
+[node name="auto_release" parent="ViewPort/Screen/GameOver/Restart" instance=ExtResource("7_832ic")]
+
 [node name="GrainNoise" type="TextureRect" parent="ViewPort/Screen"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_ravuu")
@@ -752,6 +827,9 @@ water_level = 4.0
 
 [node name="FulscreenToggle" type="Node" parent="."]
 script = ExtResource("6_apyoi")
+
+[node name="Restart" type="Node" parent="."]
+script = ExtResource("54_1hiy5")
 
 [connection signal="just_clicked" from="ViewPort/OverTvt/Café/GetClicked" to="ViewPort/OverTvt/Café" method="start_drinking"]
 [connection signal="just_clicked" from="ViewPort/OverTvt/Café/GetClicked" to="ViewPort/Time" method="skip_time"]

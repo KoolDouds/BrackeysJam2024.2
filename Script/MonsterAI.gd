@@ -29,7 +29,6 @@ func _process(delta):
 			if timer > hit_cooldown:
 				var hittables := attack_target.find_children("*", "Hittable")
 				if len(hittables) > 0:
-
 					hittables[0].hit(5)
 				timer = 0.0
 			update_state()
