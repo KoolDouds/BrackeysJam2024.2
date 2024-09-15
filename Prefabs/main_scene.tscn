@@ -1,38 +1,42 @@
-[gd_scene load_steps=43 format=3 uid="uid://cnbhtu0gn5hil"]
+[gd_scene load_steps=47 format=3 uid="uid://cnbhtu0gn5hil"]
 
-[ext_resource type="Script" path="res://Prefabs/Zoom.gd" id="2_dvof3"]
+[ext_resource type="Script" path="res://Script/Zoom.gd" id="2_dvof3"]
 [ext_resource type="PackedScene" uid="uid://5g7ir8us26jd" path="res://monde.tscn" id="2_v5mcd"]
 [ext_resource type="Texture2D" uid="uid://bumhhrvj61evj" path="res://Images/UI/Screen.png" id="3_0cx3a"]
-[ext_resource type="Script" path="res://Prefabs/ViewPortMove.gd" id="3_bn4m4"]
-[ext_resource type="Script" path="res://Prefabs/Café.gd" id="4_i6uel"]
+[ext_resource type="Script" path="res://Script/ViewPortMove.gd" id="3_bn4m4"]
+[ext_resource type="Script" path="res://Script/Café.gd" id="4_i6uel"]
 [ext_resource type="Texture2D" uid="uid://cavamldh2p0eg" path="res://Images/UI/CircleSmall.png" id="5_3ds46"]
 [ext_resource type="Script" path="res://Script/PredicitionUI.gd" id="5_3tpgk"]
 [ext_resource type="Texture2D" uid="uid://dkcx4p0gdcars" path="res://Images/UI/tasse.png" id="5_k6b46"]
 [ext_resource type="Script" path="res://Script/FullscreenToggle.gd" id="6_apyoi"]
 [ext_resource type="Texture2D" uid="uid://ccjcosaej75ip" path="res://Images/UI/tasseHL.png" id="6_e8xdt"]
-[ext_resource type="Script" path="res://Prefabs/VisibleIfHover.gd" id="6_rbisx"]
+[ext_resource type="Script" path="res://Script/VisibleIfHover.gd" id="6_rbisx"]
 [ext_resource type="PackedScene" uid="uid://dh5na76ijnv21" path="res://Prefabs/auto_release.tscn" id="7_832ic"]
 [ext_resource type="Texture2D" uid="uid://bfble8f6gpbup" path="res://Images/UI/Languette.png" id="8_n7a6f"]
-[ext_resource type="Script" path="res://Prefabs/Screen.gd" id="8_rwaf2"]
+[ext_resource type="Script" path="res://Script/Screen.gd" id="8_rwaf2"]
 [ext_resource type="Texture2D" uid="uid://dmrji4fbfpa4g" path="res://Images/UI/Slurp.png" id="9_1u4tp"]
-[ext_resource type="Script" path="res://Prefabs/DisableViewPortMove.gd" id="9_fet5x"]
+[ext_resource type="Script" path="res://Script/DisableViewPortMove.gd" id="9_fet5x"]
 [ext_resource type="Texture2D" uid="uid://d3h1xnkxeontw" path="res://Images/UI/LanguetteScribbles.png" id="9_s5hpl"]
-[ext_resource type="Script" path="res://Prefabs/TimeBar.gd" id="10_c4aw7"]
-[ext_resource type="Script" path="res://Prefabs/Languette.gd" id="11_ivlqd"]
+[ext_resource type="Script" path="res://Script/TimeBar.gd" id="10_c4aw7"]
+[ext_resource type="Script" path="res://Script/Languette.gd" id="11_ivlqd"]
 [ext_resource type="Texture2D" uid="uid://s2f3hj8tupay" path="res://Images/UI/TvNoise.jpg" id="11_pqs2a"]
-[ext_resource type="Script" path="res://Prefabs/ToggleZoom.gd" id="13_msgmk"]
-[ext_resource type="Script" path="res://Prefabs/Time.gd" id="16_dwehy"]
+[ext_resource type="Script" path="res://Script/ToggleZoom.gd" id="13_msgmk"]
+[ext_resource type="Script" path="res://Script/Time.gd" id="16_dwehy"]
+[ext_resource type="Script" path="res://Prefabs/WaterLanguette.gd" id="18_78e8s"]
 [ext_resource type="Shader" path="res://Theme/main_scene.gdshader" id="18_ceoa3"]
 [ext_resource type="Shader" path="res://Theme/add_and_sinfade.gdshader" id="18_qp5qm"]
+[ext_resource type="Script" path="res://Prefabs/WaterTextureProgressBar.gd" id="19_1rol8"]
+[ext_resource type="Texture2D" uid="uid://cjq28ongh0eqv" path="res://Images/UI/LanguetteWaterScribbles.png" id="19_ohnkt"]
 [ext_resource type="Texture2D" uid="uid://0rwh880p20dk" path="res://Images/UI/ScreenLight.png" id="19_osecn"]
 [ext_resource type="Shader" path="res://Theme/Specular.gdshader" id="22_ymqka"]
 [ext_resource type="Texture2D" uid="uid://dcm1adha27av7" path="res://Images/UI/ScreenSpecular.png" id="23_hes3o"]
-[ext_resource type="Shader" path="res://Prefabs/main_scene.gdshader" id="23_pdm8q"]
+[ext_resource type="Shader" path="res://main_scene.gdshader" id="23_pdm8q"]
 [ext_resource type="VideoStream" path="res://Images/UI/SHAMELESS.ogv" id="23_s5l6v"]
 [ext_resource type="PackedScene" uid="uid://b2d38xd3spm00" path="res://Prefabs/lane_panel.tscn" id="24_vncgv"]
-[ext_resource type="Shader" path="res://hard_noise.gdshader" id="25_nomdk"]
-[ext_resource type="AudioStream" uid="uid://d2o6qlqwctmwf" path="res://Son/Music/Calm before the Storm (Phase 1 DEMO).mp3" id="32_y4dmr"]
-[ext_resource type="Script" path="res://Prefabs/MusicMan.gd" id="33_0jrk0"]
+[ext_resource type="Shader" path="res://Script/hard_noise.gdshader" id="25_nomdk"]
+[ext_resource type="AudioStream" uid="uid://duun8mtm61m3o" path="res://Son/Music/PigeonGroovy.mp3" id="26_58rai"]
+[ext_resource type="PackedScene" uid="uid://dyhm1ssv08bxn" path="res://Prefabs/mute_when_parent_hidden.tscn" id="27_ddsbj"]
+[ext_resource type="Script" path="res://Prefabs/Water.gd" id="33_4qybo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ei8w"]
 shader = ExtResource("22_ymqka")
@@ -72,7 +76,7 @@ size = Vector2i(960, 720)
 render_target_update_mode = 4
 
 [node name="ViewPort" type="Node2D" parent="SubViewport" groups=["ViewPort"]]
-position = Vector2(2010, 381)
+position = Vector2(2011.51, 381)
 script = ExtResource("3_bn4m4")
 
 [node name="Camera2D" type="Camera2D" parent="SubViewport/ViewPort"]
@@ -87,7 +91,7 @@ script = ExtResource("3_bn4m4")
 move_enabled = false
 
 [node name="OverTvt" type="Control" parent="ViewPort"]
-z_index = 1100
+z_index = 1200
 z_as_relative = false
 layout_mode = 3
 anchors_preset = 0
@@ -195,10 +199,10 @@ stretch_mode = 5
 [node name="Time" type="Control" parent="ViewPort/TV"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -626.0
-offset_top = -448.0
-offset_right = -435.0
-offset_bottom = 100.0
+offset_left = -496.587
+offset_top = -453.13
+offset_right = -428.587
+offset_bottom = 94.8698
 
 [node name="Languette" type="Control" parent="ViewPort/TV/Time" groups=["Languette"]]
 layout_mode = 1
@@ -213,7 +217,19 @@ grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("11_ivlqd")
 
+[node name="TextureRect" type="TextureRect" parent="ViewPort/TV/Time/Languette"]
+z_index = 1100
+z_as_relative = false
+layout_mode = 0
+offset_left = -8.0
+offset_top = -6.0
+offset_right = 67.0
+offset_bottom = 499.0
+texture = ExtResource("8_n7a6f")
+
 [node name="TextureProgressBar" type="TextureProgressBar" parent="ViewPort/TV/Time/Languette"]
+z_index = 1101
+z_as_relative = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -228,26 +244,97 @@ max_value = 12.0
 step = 0.0
 value = 12.0
 fill_mode = 2
-texture_under = ExtResource("8_n7a6f")
 texture_progress = ExtResource("9_s5hpl")
 script = ExtResource("10_c4aw7")
 
 [node name="Top" type="Control" parent="ViewPort/TV/Time/Languette"]
 layout_mode = 1
 anchors_preset = 0
-offset_left = -50.0196
-offset_right = -10.0196
-offset_bottom = 40.0
+offset_left = 14.1501
+offset_top = 2.95299
+offset_right = 14.1501
+offset_bottom = 2.95299
 
 [node name="Bottom" type="Control" parent="ViewPort/TV/Time/Languette"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = -50.0196
-offset_top = -40.0
-offset_right = -10.0196
-offset_bottom = 3.05176e-05
+offset_left = 20.5629
+offset_top = -7.80591
+offset_right = 20.5629
+offset_bottom = -7.80591
+grow_vertical = 0
+
+[node name="Water" type="Control" parent="ViewPort/TV"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -569.454
+offset_top = -456.59
+offset_right = -501.454
+offset_bottom = 91.41
+rotation = 0.0506314
+
+[node name="Languette" type="Control" parent="ViewPort/TV/Water" groups=["Languette"]]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_right = 12.0
+offset_bottom = -55.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("18_78e8s")
+
+[node name="TextureRect" type="TextureRect" parent="ViewPort/TV/Water/Languette"]
+z_index = 1100
+z_as_relative = false
+layout_mode = 0
+offset_left = -8.0
+offset_top = -6.0
+offset_right = 69.0
+offset_bottom = 503.0
+texture = ExtResource("8_n7a6f")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ViewPort/TV/Water/Languette"]
+z_index = 1101
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -13.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+max_value = 1.0
+step = 0.0
+value = 1.0
+fill_mode = 3
+texture_progress = ExtResource("19_ohnkt")
+script = ExtResource("19_1rol8")
+
+[node name="Top" type="Control" parent="ViewPort/TV/Water/Languette"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 20.3999
+offset_top = 0.41984
+offset_right = 20.3999
+offset_bottom = 0.41984
+
+[node name="Bottom" type="Control" parent="ViewPort/TV/Water/Languette"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 29.7596
+offset_top = -3.77365
+offset_right = 29.7596
+offset_bottom = -3.77365
 grow_vertical = 0
 
 [node name="Light" type="TextureRect" parent="ViewPort/TV"]
@@ -277,6 +364,7 @@ script = ExtResource("8_rwaf2")
 brightness = Array[float]([0.1, 0.3, 0.5])
 
 [node name="Rien" type="Control" parent="ViewPort/Screen/Channels"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -351,7 +439,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Kitty" type="Control" parent="ViewPort/Screen/Channels"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -369,6 +456,14 @@ volume_db = -80.0
 autoplay = true
 expand = true
 loop = true
+
+[node name="KittySound" type="AudioStreamPlayer" parent="ViewPort/Screen/Channels/Kitty"]
+stream = ExtResource("26_58rai")
+volume_db = -20.0
+autoplay = true
+
+[node name="MuteWhenParentHidden" parent="ViewPort/Screen/Channels/Kitty/KittySound" node_paths=PackedStringArray("target") instance=ExtResource("27_ddsbj")]
+target = NodePath("../..")
 
 [node name="GrainNoise" type="TextureRect" parent="ViewPort/Screen"]
 texture_repeat = 2
@@ -411,13 +506,11 @@ pos = Array[Vector2]([Vector2(0, 10), Vector2(-5, -15)])
 [node name="Time" type="Node" parent="ViewPort" groups=["Time"]]
 script = ExtResource("16_dwehy")
 
+[node name="Water" type="Node" parent="ViewPort" groups=["Water"]]
+script = ExtResource("33_4qybo")
+
 [node name="FulscreenToggle" type="Node" parent="."]
 script = ExtResource("6_apyoi")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("32_y4dmr")
-autoplay = true
-script = ExtResource("33_0jrk0")
 
 [connection signal="button_down" from="ViewPort/OverTvt/Café" to="ViewPort/OverTvt/Café" method="start_drinking"]
 [connection signal="button_down" from="ViewPort/OverTvt/Café" to="ViewPort/Time" method="skip_time"]

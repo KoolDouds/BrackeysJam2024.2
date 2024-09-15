@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://sgy1veds5jla"
+path="res://.godot/imported/Breakcore be like.mp3-c94edba9929184dec67bd301991bc5b6.mp3str"
+
+[deps]
+
+source_file="res://Son/Music/Breakcore be like.mp3"
+dest_files=["res://.godot/imported/Breakcore be like.mp3-c94edba9929184dec67bd301991bc5b6.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

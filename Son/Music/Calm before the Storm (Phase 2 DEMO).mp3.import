@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dbybr8ykc7l0c"
+path="res://.godot/imported/Calm before the Storm (Phase 2 DEMO).mp3-0a60a353f2c88ff00ca980e6b02462fe.mp3str"
+
+[deps]
+
+source_file="res://Son/Music/Calm before the Storm (Phase 2 DEMO).mp3"
+dest_files=["res://.godot/imported/Calm before the Storm (Phase 2 DEMO).mp3-0a60a353f2c88ff00ca980e6b02462fe.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
