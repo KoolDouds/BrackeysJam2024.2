@@ -6,7 +6,7 @@ extends Node2D
 
 var fall_speed := 1000.0
 var target_pos := Vector2.ZERO
-var monster_count := 0
+@export var monster_count := 0
 
 func _ready():
 	mover.set_destination(target_pos, fall_speed)
@@ -25,9 +25,13 @@ func die():
 	explosion_inst.position = global_position
 	$"../..".add_child(explosion_inst)
 	
+	var angle = 0
+	var radius = 0
 	for i in range(monster_count):
 		var monster_inst := monster.instantiate()
-		monster_inst.position = global_position
+		monster_inst.position = global_position + Vector2.from_angle(angle)*radius
 		$"../..".add_child(monster_inst)
+		angle += TAU/(4)
+		radius = ceil(float(i)/10)*10*5
 	
 	$"..".queue_free()

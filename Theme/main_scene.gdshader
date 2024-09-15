@@ -10,7 +10,7 @@ void fragment() {
 	float d = x*x + y*y;
 	COLOR = texture(TEXTURE,UV+vec2(x,y)*(-0.3+d));
 	
-	float s = (COLOR.r + COLOR.g + COLOR.b )/2.0;
+	float s = (COLOR.r + COLOR.g)/1.5;
 	
 	COLOR = vec4(s*(1.0-d),s*(1.0-d),s*(1.0-d),1 );
 }

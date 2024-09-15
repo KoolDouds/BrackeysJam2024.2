@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://byct4o1uuv7ho"]
+
+[ext_resource type="Script" path="res://Prefabs/GFX.gd" id="1_lx8et"]
+[ext_resource type="Script" path="res://Prefabs/WaterPointer.gd" id="2_2u0dp"]
+[ext_resource type="Script" path="res://Prefabs/BuildPointer.gd" id="3_yfv8c"]
+[ext_resource type="AudioStream" uid="uid://ccyqyrmdcyc8a" path="res://Son/SFX/Slurp2.wav" id="4_caxmn"]
+
+[node name="Cursor" type="Node2D" groups=["Cursor"]]
+
+[node name="GFX" type="Node2D" parent="."]
+script = ExtResource("1_lx8et")
+
+[node name="WaterPointer" type="Node2D" parent="."]
+script = ExtResource("2_2u0dp")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="WaterPointer"]
+stream = ExtResource("4_caxmn")
+
+[node name="BuildPointer" type="Node2D" parent="." groups=["BuildPointer"]]
+script = ExtResource("3_yfv8c")
+
+[connection signal="on_collect" from="WaterPointer" to="WaterPointer/AudioStreamPlayer2" method="play"]

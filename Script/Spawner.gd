@@ -5,7 +5,7 @@ extends Node2D
 var timer := 0.0
 
 
-func spawn(target_pos: Vector2, height: int = 100.0, speed := 1000.0, monster_count := 1):
+func spawn(target_pos: Vector2, monster_count := 1, height: int = 700.0, speed := 3000.0):
 	var inst := meteor.instantiate()
 	inst.position = target_pos + Vector2.UP * height
 	

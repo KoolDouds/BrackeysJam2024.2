@@ -1,9 +1,12 @@
 class_name MusicMan extends Node
 
-var muted := true
+var muted := false
 var total_mute := false
+var mult := 1.0
+var initial_volume : float
 
 func _ready():
+	initial_volume = $"..".volume_db
 	update_vol()
 
 func _process(delta):
@@ -12,4 +15,5 @@ func _process(delta):
 	update_vol()
 
 func update_vol():
-		$"..".volume_db = -1000 if (muted||total_mute) else -10
+	var no_sound = -50.0
+	$"..".volume_db = no_sound*10 if (muted||total_mute) else lerp(no_sound,initial_volume,sqrt(sqrt(mult)))

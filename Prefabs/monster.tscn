@@ -1,21 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw634gx0an7yd"]
+[gd_scene load_steps=8 format=3 uid="uid://bw634gx0an7yd"]
 
 [ext_resource type="PackedScene" uid="uid://bmg17dk82mx7s" path="res://Prefabs/mover.tscn" id="1_00nhr"]
 [ext_resource type="Script" path="res://Script/MonsterAI.gd" id="2_b3ytp"]
-[ext_resource type="Texture2D" uid="uid://d2qrf75imw08v" path="res://Images/icon.svg" id="3_vthyr"]
 [ext_resource type="Script" path="res://Script/Hittable.gd" id="4_hgtav"]
+[ext_resource type="Texture2D" uid="uid://dnje8va56cxr2" path="res://Images/UI/monstre1.png" id="4_lbceb"]
+[ext_resource type="Texture2D" uid="uid://bt6gkj8o7i31" path="res://Images/UI/monstre2.png" id="5_kjbyp"]
+[ext_resource type="Script" path="res://Prefabs/Spawn.gd" id="6_kw64s"]
 
-[node name="Monster" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfy2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lbceb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kjbyp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Monster" type="Node2D" groups=["NotWaterProof"]]
 
 [node name="Mover" parent="." instance=ExtResource("1_00nhr")]
 
 [node name="MonsterAI" type="Node2D" parent="."]
 script = ExtResource("2_b3ytp")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_vthyr")
+speed = 25.0
 
 [node name="Hittable" type="Node2D" parent="."]
 script = ExtResource("4_hgtav")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_cfy2c")
+autoplay = "default"
+frame_progress = 0.24537
+
+[node name="Spawn" type="Node2D" parent="."]
+script = ExtResource("6_kw64s")
+path = "res://Prefabs/explosion_elec.tscn"
+
+[connection signal="on_die" from="Hittable" to="Spawn" method="spawn"]

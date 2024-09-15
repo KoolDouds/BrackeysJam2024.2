@@ -1,7 +1,7 @@
 class_name Water extends Node
 
-var water_level : float = 0
-var water_max := 20.0
+@export var water_level : float = 0
+@export var water_max := 20.0
 
 var previous_water_level : float
 

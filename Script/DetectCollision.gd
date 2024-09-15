@@ -20,7 +20,7 @@ func _draw():
 	draw_arc(offset, radius,0 , TAU,20,Color.CYAN)
 
 func _process(delta):
-	if (Engine.is_editor_hint()): return
+	if (!visible or Engine.is_editor_hint()): return
 	
 	for n in collide_with:
 		detect(n)

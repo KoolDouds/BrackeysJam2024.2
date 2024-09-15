@@ -1,11 +1,11 @@
-[gd_scene load_steps=47 format=3 uid="uid://cnbhtu0gn5hil"]
+[gd_scene load_steps=66 format=3 uid="uid://cnbhtu0gn5hil"]
 
 [ext_resource type="Script" path="res://Script/Zoom.gd" id="2_dvof3"]
 [ext_resource type="PackedScene" uid="uid://5g7ir8us26jd" path="res://monde.tscn" id="2_v5mcd"]
 [ext_resource type="Texture2D" uid="uid://bumhhrvj61evj" path="res://Images/UI/Screen.png" id="3_0cx3a"]
 [ext_resource type="Script" path="res://Script/ViewPortMove.gd" id="3_bn4m4"]
+[ext_resource type="PackedScene" uid="uid://byct4o1uuv7ho" path="res://Prefabs/cursor.tscn" id="3_igs73"]
 [ext_resource type="Script" path="res://Script/Café.gd" id="4_i6uel"]
-[ext_resource type="Texture2D" uid="uid://cavamldh2p0eg" path="res://Images/UI/CircleSmall.png" id="5_3ds46"]
 [ext_resource type="Script" path="res://Script/PredicitionUI.gd" id="5_3tpgk"]
 [ext_resource type="Texture2D" uid="uid://dkcx4p0gdcars" path="res://Images/UI/tasse.png" id="5_k6b46"]
 [ext_resource type="Script" path="res://Script/FullscreenToggle.gd" id="6_apyoi"]
@@ -15,28 +15,44 @@
 [ext_resource type="Texture2D" uid="uid://bfble8f6gpbup" path="res://Images/UI/Languette.png" id="8_n7a6f"]
 [ext_resource type="Script" path="res://Script/Screen.gd" id="8_rwaf2"]
 [ext_resource type="Texture2D" uid="uid://dmrji4fbfpa4g" path="res://Images/UI/Slurp.png" id="9_1u4tp"]
-[ext_resource type="Script" path="res://Script/DisableViewPortMove.gd" id="9_fet5x"]
 [ext_resource type="Texture2D" uid="uid://d3h1xnkxeontw" path="res://Images/UI/LanguetteScribbles.png" id="9_s5hpl"]
+[ext_resource type="Script" path="res://Prefabs/Get_click.gd" id="9_t8yuf"]
 [ext_resource type="Script" path="res://Script/TimeBar.gd" id="10_c4aw7"]
+[ext_resource type="Script" path="res://Prefabs/Slurp.gd" id="11_8x0jl"]
 [ext_resource type="Script" path="res://Script/Languette.gd" id="11_ivlqd"]
 [ext_resource type="Texture2D" uid="uid://s2f3hj8tupay" path="res://Images/UI/TvNoise.jpg" id="11_pqs2a"]
+[ext_resource type="AudioStream" uid="uid://b7odmkgg48hnb" path="res://Son/SFX/Slurp.wav" id="12_225o4"]
 [ext_resource type="Script" path="res://Script/ToggleZoom.gd" id="13_msgmk"]
+[ext_resource type="Texture2D" uid="uid://pyp8s6gxo40c" path="res://Images/UI/switch2.png" id="16_a741a"]
 [ext_resource type="Script" path="res://Script/Time.gd" id="16_dwehy"]
+[ext_resource type="AudioStream" uid="uid://dee6gsbat7vyh" path="res://Son/SFX/ChangeScreen.wav" id="17_w2igx"]
+[ext_resource type="AudioStream" uid="uid://bnnokxguj5ypm" path="res://Son/SFX/Thud.wav" id="18_31jbr"]
 [ext_resource type="Script" path="res://Prefabs/WaterLanguette.gd" id="18_78e8s"]
 [ext_resource type="Shader" path="res://Theme/main_scene.gdshader" id="18_ceoa3"]
 [ext_resource type="Shader" path="res://Theme/add_and_sinfade.gdshader" id="18_qp5qm"]
 [ext_resource type="Script" path="res://Prefabs/WaterTextureProgressBar.gd" id="19_1rol8"]
 [ext_resource type="Texture2D" uid="uid://cjq28ongh0eqv" path="res://Images/UI/LanguetteWaterScribbles.png" id="19_ohnkt"]
 [ext_resource type="Texture2D" uid="uid://0rwh880p20dk" path="res://Images/UI/ScreenLight.png" id="19_osecn"]
+[ext_resource type="Texture2D" uid="uid://bhsusesva5i6h" path="res://Images/UI/switch1.png" id="19_xbh7o"]
 [ext_resource type="Shader" path="res://Theme/Specular.gdshader" id="22_ymqka"]
 [ext_resource type="Texture2D" uid="uid://dcm1adha27av7" path="res://Images/UI/ScreenSpecular.png" id="23_hes3o"]
 [ext_resource type="Shader" path="res://main_scene.gdshader" id="23_pdm8q"]
 [ext_resource type="VideoStream" path="res://Images/UI/SHAMELESS.ogv" id="23_s5l6v"]
 [ext_resource type="PackedScene" uid="uid://b2d38xd3spm00" path="res://Prefabs/lane_panel.tscn" id="24_vncgv"]
 [ext_resource type="Shader" path="res://Script/hard_noise.gdshader" id="25_nomdk"]
+[ext_resource type="Shader" path="res://Theme/waterScreen.gdshader" id="25_udhhf"]
 [ext_resource type="AudioStream" uid="uid://duun8mtm61m3o" path="res://Son/Music/PigeonGroovy.mp3" id="26_58rai"]
 [ext_resource type="PackedScene" uid="uid://dyhm1ssv08bxn" path="res://Prefabs/mute_when_parent_hidden.tscn" id="27_ddsbj"]
+[ext_resource type="PackedScene" uid="uid://yee6ktwsmf2q" path="res://Prefabs/toggle_filtre.tscn" id="28_kud8u"]
+[ext_resource type="Script" path="res://Prefabs/WaterButton.gd" id="29_uh7br"]
+[ext_resource type="Shader" path="res://Prefabs/build_mode.gdshader" id="31_ckj2p"]
+[ext_resource type="Script" path="res://Prefabs/WaterButtonPlace.gd" id="31_klgl0"]
+[ext_resource type="PackedScene" uid="uid://b7r8l16kxlbrd" path="res://Prefabs/mute.tscn" id="32_poxr6"]
 [ext_resource type="Script" path="res://Prefabs/Water.gd" id="33_4qybo"]
+[ext_resource type="Script" path="res://Prefabs/Build.gd" id="33_c7dxb"]
+[ext_resource type="AudioStream" uid="uid://bdewx3084u5od" path="res://Son/SFX/Up.wav" id="36_2d1nj"]
+[ext_resource type="AudioStream" uid="uid://bi3h62cnwpsr7" path="res://Son/SFX/Down.wav" id="38_31cgi"]
+[ext_resource type="Texture2D" uid="uid://bn2jj76whmi6j" path="res://Images/UI/titre.png" id="46_ji3aj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ei8w"]
 shader = ExtResource("22_ymqka")
@@ -52,13 +68,22 @@ shader = ExtResource("18_qp5qm")
 shader_parameter/alpha = 0.5
 shader_parameter/noise = SubResource("NoiseTexture2D_nqv5m")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qeftp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thi06"]
 shader = ExtResource("18_ceoa3")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_bh3jj"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qeftp"]
+shader = ExtResource("25_udhhf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21b0q"]
+shader = ExtResource("31_ckj2p")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5e7px"]
+shader = ExtResource("18_ceoa3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tnd4f"]
 shader = ExtResource("18_ceoa3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ravuu"]
@@ -76,12 +101,14 @@ size = Vector2i(960, 720)
 render_target_update_mode = 4
 
 [node name="ViewPort" type="Node2D" parent="SubViewport" groups=["ViewPort"]]
-position = Vector2(2011.51, 381)
+position = Vector2(500, 500)
 script = ExtResource("3_bn4m4")
 
 [node name="Camera2D" type="Camera2D" parent="SubViewport/ViewPort"]
-position = Vector2(-1705, -161)
 script = ExtResource("2_dvof3")
+
+[node name="Cursor" parent="SubViewport/ViewPort/Camera2D" instance=ExtResource("3_igs73")]
+z_index = 1000
 
 [node name="Monde" parent="SubViewport" instance=ExtResource("2_v5mcd")]
 
@@ -97,18 +124,17 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
-[node name="Café" type="Button" parent="ViewPort/OverTvt"]
-layout_mode = 0
+[node name="Café" type="Control" parent="ViewPort/OverTvt"]
+anchors_preset = 0
 offset_left = -430.0
 offset_top = 103.0
 offset_right = -173.0
 offset_bottom = 367.0
-flat = true
+mouse_filter = 2
 script = ExtResource("4_i6uel")
 metadata/_edit_group_ = true
-
-[node name="auto_release" parent="ViewPort/OverTvt/Café" instance=ExtResource("7_832ic")]
 
 [node name="TasseTex" type="TextureRect" parent="ViewPort/OverTvt/Café"]
 layout_mode = 1
@@ -117,6 +143,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("5_k6b46")
 expand_mode = 1
 stretch_mode = 4
@@ -128,10 +155,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("6_e8xdt")
 expand_mode = 1
 stretch_mode = 4
 script = ExtResource("6_rbisx")
+
+[node name="GetClicked" type="Control" parent="ViewPort/OverTvt/Café" node_paths=PackedStringArray("hover_highlight")]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 47.0
+offset_right = 227.0
+offset_bottom = 248.0
+script = ExtResource("9_t8yuf")
+hover_highlight = NodePath("../TassHighlight")
 
 [node name="Slurp" type="TextureRect" parent="ViewPort/OverTvt"]
 visible = false
@@ -141,9 +178,20 @@ offset_top = -47.0
 offset_right = 77.0
 offset_bottom = 116.0
 scale = Vector2(2.4, 2.4)
+mouse_filter = 2
 texture = ExtResource("9_1u4tp")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Control" type="Control" parent="ViewPort/OverTvt/Slurp"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_8x0jl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ViewPort/OverTvt/Slurp/Control"]
+stream = ExtResource("12_225o4")
+autoplay = true
 
 [node name="TV" type="Sprite2D" parent="ViewPort"]
 z_index = 1000
@@ -151,7 +199,6 @@ z_as_relative = false
 position = Vector2(20, 114)
 scale = Vector2(0.779694, 0.779693)
 texture = ExtResource("3_0cx3a")
-metadata/_edit_lock_ = true
 
 [node name="Specular" type="TextureRect" parent="ViewPort/TV"]
 material = SubResource("ShaderMaterial_2ei8w")
@@ -163,38 +210,82 @@ texture = ExtResource("23_hes3o")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="CycleScreens" type="Button" parent="ViewPort/TV"]
+[node name="CycleScreens" type="Control" parent="ViewPort/TV"]
+layout_mode = 3
+anchors_preset = 0
 offset_left = 344.0
 offset_top = -21.0
 offset_right = 449.0
 offset_bottom = 78.0
-flat = true
-
-[node name="VisibleIfHover" type="Control" parent="ViewPort/TV/CycleScreens"]
-z_index = 1005
-z_as_relative = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 mouse_filter = 2
-script = ExtResource("6_rbisx")
 
-[node name="TextureRect" type="TextureRect" parent="ViewPort/TV/CycleScreens/VisibleIfHover"]
+[node name="TextureRect" type="TextureRect" parent="ViewPort/TV/CycleScreens"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.55798
-offset_top = -4.65112
-offset_right = 516.442
-offset_bottom = 513.349
+offset_left = 11.2676
+offset_top = -9.78131
+offset_right = 455.268
+offset_bottom = 442.219
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.121558
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_3ds46")
+texture = ExtResource("16_a741a")
 stretch_mode = 5
 
-[node name="auto_release" parent="ViewPort/TV/CycleScreens" instance=ExtResource("7_832ic")]
+[node name="Get_click" type="Control" parent="ViewPort/TV/CycleScreens" node_paths=PackedStringArray("hover_highlight")]
+z_index = 1005
+z_as_relative = false
+anchors_preset = 0
+offset_left = 39.4838
+offset_top = 0.479119
+offset_right = 93.4838
+offset_bottom = 106.479
+rotation = -0.428257
+script = ExtResource("9_t8yuf")
+hover_highlight = NodePath("../TextureRect")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ViewPort/TV/CycleScreens/Get_click"]
+stream = ExtResource("17_w2igx")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ViewPort/TV/CycleScreens/Get_click"]
+stream = ExtResource("18_31jbr")
+
+[node name="TextureRect2" type="TextureRect" parent="ViewPort/TV/CycleScreens"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.2676
+offset_top = -9.78131
+offset_right = 455.268
+offset_bottom = 442.219
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.121558
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_xbh7o")
+stretch_mode = 5
+
+[node name="Get_click2" type="Control" parent="ViewPort/TV/CycleScreens" node_paths=PackedStringArray("hover_highlight")]
+z_index = 1005
+z_as_relative = false
+anchors_preset = 0
+offset_left = -13.1009
+offset_top = 28.6953
+offset_right = 40.8991
+offset_bottom = 134.695
+rotation = -0.428257
+script = ExtResource("9_t8yuf")
+hover_highlight = NodePath("../TextureRect2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ViewPort/TV/CycleScreens/Get_click2"]
+stream = ExtResource("17_w2igx")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ViewPort/TV/CycleScreens/Get_click2"]
+stream = ExtResource("18_31jbr")
 
 [node name="Time" type="Control" parent="ViewPort/TV"]
 layout_mode = 3
@@ -203,6 +294,7 @@ offset_left = -496.587
 offset_top = -453.13
 offset_right = -428.587
 offset_bottom = 94.8698
+mouse_filter = 2
 
 [node name="Languette" type="Control" parent="ViewPort/TV/Time" groups=["Languette"]]
 layout_mode = 1
@@ -215,6 +307,7 @@ offset_right = 12.0
 offset_bottom = -55.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("11_ivlqd")
 
 [node name="TextureRect" type="TextureRect" parent="ViewPort/TV/Time/Languette"]
@@ -225,6 +318,7 @@ offset_left = -8.0
 offset_top = -6.0
 offset_right = 67.0
 offset_bottom = 499.0
+mouse_filter = 2
 texture = ExtResource("8_n7a6f")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="ViewPort/TV/Time/Languette"]
@@ -240,6 +334,7 @@ offset_bottom = -102.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.25, 1.25)
+mouse_filter = 2
 max_value = 12.0
 step = 0.0
 value = 12.0
@@ -254,6 +349,7 @@ offset_left = 14.1501
 offset_top = 2.95299
 offset_right = 14.1501
 offset_bottom = 2.95299
+mouse_filter = 2
 
 [node name="Bottom" type="Control" parent="ViewPort/TV/Time/Languette"]
 layout_mode = 1
@@ -265,6 +361,7 @@ offset_top = -7.80591
 offset_right = 20.5629
 offset_bottom = -7.80591
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="Water" type="Control" parent="ViewPort/TV"]
 layout_mode = 3
@@ -274,6 +371,7 @@ offset_top = -456.59
 offset_right = -501.454
 offset_bottom = 91.41
 rotation = 0.0506314
+mouse_filter = 2
 
 [node name="Languette" type="Control" parent="ViewPort/TV/Water" groups=["Languette"]]
 layout_mode = 1
@@ -286,6 +384,7 @@ offset_right = 12.0
 offset_bottom = -55.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("18_78e8s")
 
 [node name="TextureRect" type="TextureRect" parent="ViewPort/TV/Water/Languette"]
@@ -296,6 +395,7 @@ offset_left = -8.0
 offset_top = -6.0
 offset_right = 69.0
 offset_bottom = 503.0
+mouse_filter = 2
 texture = ExtResource("8_n7a6f")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="ViewPort/TV/Water/Languette"]
@@ -311,6 +411,7 @@ offset_bottom = -102.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.25, 1.25)
+mouse_filter = 2
 max_value = 1.0
 step = 0.0
 value = 1.0
@@ -325,6 +426,7 @@ offset_left = 20.3999
 offset_top = 0.41984
 offset_right = 20.3999
 offset_bottom = 0.41984
+mouse_filter = 2
 
 [node name="Bottom" type="Control" parent="ViewPort/TV/Water/Languette"]
 layout_mode = 1
@@ -336,6 +438,7 @@ offset_top = -3.77365
 offset_right = 29.7596
 offset_bottom = -3.77365
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="Light" type="TextureRect" parent="ViewPort/TV"]
 material = SubResource("ShaderMaterial_ip8om")
@@ -354,33 +457,19 @@ offset_left = -253.0
 offset_top = -204.0
 offset_right = 236.0
 offset_bottom = 173.0
+mouse_filter = 1
 
 [node name="Channels" type="Control" parent="ViewPort/Screen"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 489.0
 offset_bottom = 377.0
+mouse_filter = 1
 script = ExtResource("8_rwaf2")
-brightness = Array[float]([0.1, 0.3, 0.5])
-
-[node name="Rien" type="Control" parent="ViewPort/Screen/Channels"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="SetViewPortMove" type="Node" parent="ViewPort/Screen/Channels/Rien"]
-script = ExtResource("9_fet5x")
-
-[node name="TextureRect" type="TextureRect" parent="ViewPort/Screen/Channels/Rien"]
-material = SubResource("ShaderMaterial_qeftp")
-layout_mode = 0
-offset_left = -6.0
-offset_right = 471.0
-offset_bottom = 370.0
-texture = SubResource("ViewportTexture_bh3jj")
-expand_mode = 1
-stretch_mode = 4
+active_screen = 1
+brightness = Array[float]([0.3, 0.1, 0.1, 0.1, 0.5])
+move_enabled = Array[bool]([false, true, true, true, false])
+cursor_enabled = Array[int]([0, 0, 1, 2, 0])
 
 [node name="EcranPrediction" type="Control" parent="ViewPort/Screen/Channels"]
 visible = false
@@ -438,12 +527,141 @@ layout_mode = 2
 [node name="LanePanel3" parent="ViewPort/Screen/Channels/EcranPrediction/PredicitonUI/Lanes" instance=ExtResource("24_vncgv")]
 layout_mode = 2
 
-[node name="Kitty" type="Control" parent="ViewPort/Screen/Channels"]
+[node name="Rien" type="Control" parent="ViewPort/Screen/Channels"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="ViewPort/Screen/Channels/Kitty"]
+[node name="TextureRect" type="TextureRect" parent="ViewPort/Screen/Channels/Rien"]
+material = SubResource("ShaderMaterial_thi06")
+layout_mode = 0
+offset_left = -6.0
+offset_right = 471.0
+offset_bottom = 370.0
+texture = SubResource("ViewportTexture_bh3jj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ToggleFiltre0" parent="ViewPort/Screen/Channels/Rien" instance=ExtResource("28_kud8u")]
+
+[node name="ToggleFiltre1" parent="ViewPort/Screen/Channels/Rien" instance=ExtResource("28_kud8u")]
+offset_top = 115.0
+offset_bottom = 155.0
+id = 1
+
+[node name="ToggleFiltre2" parent="ViewPort/Screen/Channels/Rien" instance=ExtResource("28_kud8u")]
+offset_top = 195.0
+offset_bottom = 235.0
+id = 2
+
+[node name="ToggleFiltre3" parent="ViewPort/Screen/Channels/Rien" instance=ExtResource("28_kud8u")]
+offset_top = 265.0
+offset_bottom = 305.0
+id = 3
+
+[node name="WaterMode" type="Control" parent="ViewPort/Screen/Channels"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="ViewPort/Screen/Channels/WaterMode"]
+material = SubResource("ShaderMaterial_qeftp")
+layout_mode = 0
+offset_left = -6.0
+offset_right = 471.0
+offset_bottom = 370.0
+texture = SubResource("ViewportTexture_bh3jj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="WaterButtonCollect" type="Button" parent="ViewPort/Screen/Channels/WaterMode/TextureRect"]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 219.0
+offset_right = 389.0
+offset_bottom = 250.0
+text = ">> COLLECT <<
+[+1] water"
+script = ExtResource("29_uh7br")
+
+[node name="auto_release" parent="ViewPort/Screen/Channels/WaterMode/TextureRect/WaterButtonCollect" instance=ExtResource("7_832ic")]
+
+[node name="BuildMode" type="Control" parent="ViewPort/Screen/Channels"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="ViewPort/Screen/Channels/BuildMode"]
+material = SubResource("ShaderMaterial_21b0q")
+layout_mode = 0
+offset_left = -6.0
+offset_right = 471.0
+offset_bottom = 370.0
+texture = SubResource("ViewportTexture_bh3jj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Place" type="Button" parent="ViewPort/Screen/Channels/BuildMode/TextureRect"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 221.0
+offset_right = 390.0
+offset_bottom = 301.0
+text = ">> PLACE <<
+Water  Time
+[-2]      [2]"
+script = ExtResource("31_klgl0")
+
+[node name="auto_release" parent="ViewPort/Screen/Channels/BuildMode/TextureRect/Place" instance=ExtResource("7_832ic")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ViewPort/Screen/Channels/BuildMode/TextureRect/Place"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = ">>>>"
+
+[node name="auto_release" parent="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer/Button" instance=ExtResource("7_832ic")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer/Button"]
+stream = ExtResource("36_2d1nj")
+volume_db = -10.0
+
+[node name="Button2" type="Button" parent="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<<<<"
+
+[node name="auto_release" parent="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer/Button2" instance=ExtResource("7_832ic")]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer/Button2"]
+stream = ExtResource("38_31cgi")
+volume_db = -10.0
+
+[node name="Build" type="Control" parent="ViewPort/Screen/Channels/BuildMode/TextureRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("33_c7dxb")
+
+[node name="Pigeon" type="Control" parent="ViewPort/Screen/Channels"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="ViewPort/Screen/Channels/Pigeon"]
 material = SubResource("ShaderMaterial_5e7px")
 layout_mode = 0
 offset_left = 475.0
@@ -457,13 +675,34 @@ autoplay = true
 expand = true
 loop = true
 
-[node name="KittySound" type="AudioStreamPlayer" parent="ViewPort/Screen/Channels/Kitty"]
+[node name="PigeonSound" type="AudioStreamPlayer" parent="ViewPort/Screen/Channels/Pigeon"]
 stream = ExtResource("26_58rai")
-volume_db = -20.0
+volume_db = -5.0
 autoplay = true
 
-[node name="MuteWhenParentHidden" parent="ViewPort/Screen/Channels/Kitty/KittySound" node_paths=PackedStringArray("target") instance=ExtResource("27_ddsbj")]
+[node name="MuteWhenParentHidden" parent="ViewPort/Screen/Channels/Pigeon/PigeonSound" node_paths=PackedStringArray("target") instance=ExtResource("27_ddsbj")]
 target = NodePath("../..")
+
+[node name="Mute" parent="ViewPort/Screen/Channels/Pigeon/PigeonSound" instance=ExtResource("32_poxr6")]
+
+[node name="Titre" type="TextureRect" parent="ViewPort/Screen"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_tnd4f")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 12.0
+offset_right = 47.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.895, 0.895)
+mouse_filter = 2
+texture = ExtResource("46_ji3aj")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="GrainNoise" type="TextureRect" parent="ViewPort/Screen"]
 texture_repeat = 2
@@ -499,6 +738,7 @@ mouse_filter = 2
 texture = ExtResource("11_pqs2a")
 
 [node name="Camera2D" type="Camera2D" parent="ViewPort"]
+position = Vector2(0, -4)
 script = ExtResource("13_msgmk")
 zooms = Array[float]([0.85, 1.45])
 pos = Array[Vector2]([Vector2(0, 10), Vector2(-5, -15)])
@@ -508,11 +748,20 @@ script = ExtResource("16_dwehy")
 
 [node name="Water" type="Node" parent="ViewPort" groups=["Water"]]
 script = ExtResource("33_4qybo")
+water_level = 4.0
 
 [node name="FulscreenToggle" type="Node" parent="."]
 script = ExtResource("6_apyoi")
 
-[connection signal="button_down" from="ViewPort/OverTvt/Café" to="ViewPort/OverTvt/Café" method="start_drinking"]
-[connection signal="button_down" from="ViewPort/OverTvt/Café" to="ViewPort/Time" method="skip_time"]
-[connection signal="pressed" from="ViewPort/TV/CycleScreens" to="ViewPort/Screen/Channels" method="switch_screen"]
-[connection signal="visibility_changed" from="ViewPort/Screen/Channels/Rien" to="ViewPort/Screen/Channels/Rien/SetViewPortMove" method="_on_rien_visibility_changed"]
+[connection signal="just_clicked" from="ViewPort/OverTvt/Café/GetClicked" to="ViewPort/OverTvt/Café" method="start_drinking"]
+[connection signal="just_clicked" from="ViewPort/OverTvt/Café/GetClicked" to="ViewPort/Time" method="skip_time"]
+[connection signal="just_clicked" from="ViewPort/TV/CycleScreens/Get_click" to="ViewPort/TV/CycleScreens/Get_click/AudioStreamPlayer" method="play"]
+[connection signal="just_clicked" from="ViewPort/TV/CycleScreens/Get_click" to="ViewPort/TV/CycleScreens/Get_click/AudioStreamPlayer2" method="play"]
+[connection signal="just_clicked" from="ViewPort/TV/CycleScreens/Get_click" to="ViewPort/Screen/Channels" method="switch_screen"]
+[connection signal="just_clicked" from="ViewPort/TV/CycleScreens/Get_click2" to="ViewPort/TV/CycleScreens/Get_click2/AudioStreamPlayer" method="play"]
+[connection signal="just_clicked" from="ViewPort/TV/CycleScreens/Get_click2" to="ViewPort/TV/CycleScreens/Get_click2/AudioStreamPlayer2" method="play"]
+[connection signal="just_clicked" from="ViewPort/TV/CycleScreens/Get_click2" to="ViewPort/Screen/Channels" method="switch_back"]
+[connection signal="button_down" from="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer/Button" to="ViewPort/Screen/Channels/BuildMode/TextureRect/Build" method="reduce_cost"]
+[connection signal="button_down" from="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer/Button" to="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer/Button/AudioStreamPlayer" method="play" binds= [0.0]]
+[connection signal="button_down" from="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer/Button2" to="ViewPort/Screen/Channels/BuildMode/TextureRect/Build" method="reduce_time"]
+[connection signal="button_down" from="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer/Button2" to="ViewPort/Screen/Channels/BuildMode/TextureRect/Place/HBoxContainer/Button2/AudioStreamPlayer2" method="play" binds= [0.0]]

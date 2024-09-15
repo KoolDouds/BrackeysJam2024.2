@@ -3,7 +3,7 @@ extends Node2D
 @onready var move_target := get_tree().get_first_node_in_group("TargetPoint")
 @onready var mover := $"../Mover"
 
-var speed := 100.0
+@export var speed := 100.0
 var state := MonsterState.MOVING
 
 var hit_cooldown := 2.0
@@ -29,7 +29,7 @@ func _process(delta):
 			if timer > hit_cooldown:
 				var hittables := attack_target.find_children("*", "Hittable")
 				if len(hittables) > 0:
-					print("hit!!!!")
+
 					hittables[0].hit(5)
 				timer = 0.0
 			update_state()
@@ -40,7 +40,7 @@ func _process(delta):
 func switch_state(new_state: MonsterState):
 	if state == new_state: return
 
-	print("switch to " + str(new_state))
+
 	timer = 0.0
 	mover.set_velocity(Vector2.UP, 0.0)
 	

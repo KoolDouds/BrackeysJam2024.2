@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgipmp6u1gfvt"]
+[gd_scene load_steps=4 format=3 uid="uid://cgipmp6u1gfvt"]
 
 [ext_resource type="Script" path="res://Script/EmitOnSpawn.gd" id="1_sqj1x"]
+[ext_resource type="AudioStream" uid="uid://bddcyr46m37pl" path="res://Son/SFX/Boom.wav" id="2_uw34y"]
 
 [sub_resource type="Gradient" id="Gradient_qcqsg"]
 offsets = PackedFloat32Array(0, 0.915916, 1)
@@ -24,3 +25,7 @@ color_initial_ramp = SubResource("Gradient_qcqsg")
 
 [node name="EmitOnSpawn" type="Node2D" parent="."]
 script = ExtResource("1_sqj1x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_uw34y")
+autoplay = true

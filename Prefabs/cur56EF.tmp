@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://byct4o1uuv7ho"]
+
+[ext_resource type="Script" path="res://Prefabs/GFX.gd" id="1_lx8et"]
+[ext_resource type="Script" path="res://Prefabs/WaterPointer.gd" id="2_2u0dp"]
+
+[node name="Cursor" type="Node2D" groups=["Cursor"]]
+
+[node name="GFX" type="Node2D" parent="."]
+script = ExtResource("1_lx8et")
+
+[node name="WaterPointer" type="Node2D" parent="."]
+script = ExtResource("2_2u0dp")

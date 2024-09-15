@@ -12,24 +12,28 @@ script = ExtResource("1_pkhwd")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_eqft1")
+volume_db = 10.0
 autoplay = true
 
 [node name="Mute" parent="Music" instance=ExtResource("3_o1lox")]
 
 [node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3apc0")
+volume_db = 5.0
 autoplay = true
 
 [node name="Mute" parent="Music2" instance=ExtResource("3_o1lox")]
 
 [node name="Music3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_nork6")
+volume_db = 5.0
 autoplay = true
 
 [node name="Mute" parent="Music3" instance=ExtResource("3_o1lox")]
 
 [node name="Music4" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_evo4s")
+volume_db = 5.0
 autoplay = true
 
 [node name="Mute" parent="Music4" instance=ExtResource("3_o1lox")]

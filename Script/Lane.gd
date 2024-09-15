@@ -10,13 +10,22 @@ var meteor_coord : Vector2
 var vitesse := 1.0
 var MAX_ERROR := 300
 
-var angle : float = 20.0
+var worst_angle := 45.0
+var best_angle := 5.0
+var angle : float = worst_angle
 var error_radius : float = 0
 var predictions : Array[Prediction] = []
 
 var time_of_impact : float
 
 var meteor_id : int
+
+var water : Water
+var cost : float = 0
+
+
+func _ready():
+	water = get_tree().get_first_node_in_group("Water")
 
 func _draw():
 	var col := Color(0,1,1,0.2)
@@ -51,7 +60,9 @@ func init_random_height():
 	vitesse = (1-disp_v/2.0) + disp_v * randf()
 	meteor.position = impact_point.position.lerp(sky_point.position, meteor_h)
 	update_time_of_impact()
+	set_precision(angle)
 	update_error()
+	$Meteor/TextureRect.id = meteor_id
 
 
 func update_time_of_impact():
@@ -72,8 +83,13 @@ func press_decrease_precision():
 	set_precision(angle + 5)
 
 func set_precision(new_angle : float):
-	angle = clamp(new_angle, 0, 89)
+	angle = clamp(new_angle, best_angle, worst_angle)
 	update_error()
+	update_cost()
+
+func update_cost():
+	cost = max(0.5,floor((1-(angle/worst_angle))*5))
+
 
 func fall_h(decrease : float):
 	decrease_h(decrease*vitesse)
@@ -86,6 +102,7 @@ func set_h(value : float):
 	update_error()
 
 func press_mesure():
+	water.add_water(-cost)
 	mesure()
 
 func update_error():
