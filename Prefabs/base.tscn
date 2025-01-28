@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://brkydqists1yk"]
+
+[ext_resource type="Script" path="res://Script/Hittable.gd" id="1_010u3"]
+[ext_resource type="Texture2D" uid="uid://h5wyu7bdndm1" path="res://Images/UI/cabane.png" id="2_nabkk"]
+[ext_resource type="Script" path="res://Prefabs/Spawn.gd" id="3_4roml"]
+[ext_resource type="Script" path="res://Prefabs/GameOver.gd" id="4_peext"]
+
+[node name="Base" type="Node2D" groups=["monster_target"]]
+
+[node name="Hittable" type="Node2D" parent="."]
+script = ExtResource("1_010u3")
+show_health = true
+max_health = 100
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.276, 0.276)
+texture = ExtResource("2_nabkk")
+
+[node name="Spawn" type="Node2D" parent="."]
+script = ExtResource("3_4roml")
+path = "res://Prefabs/explosion_elec.tscn"
+
+[node name="GameOver" type="Node2D" parent="."]
+script = ExtResource("4_peext")
+
+[connection signal="on_die" from="Hittable" to="Spawn" method="spawn"]
+[connection signal="on_die" from="Hittable" to="GameOver" method="game_over"]

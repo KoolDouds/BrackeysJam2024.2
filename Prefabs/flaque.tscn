@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb3n1jasxp8vh"]
+
+[ext_resource type="Texture2D" uid="uid://ikpqmix4kmtc" path="res://Images/UI/flaque.png" id="1_y8kb4"]
+[ext_resource type="Script" path="res://Script/DetectCollision.gd" id="2_nhgqj"]
+[ext_resource type="Script" path="res://DeleteParent.gd" id="3_n5k28"]
+[ext_resource type="Script" path="res://DestroyEntity.gd" id="4_mfs7n"]
+
+[node name="Flaque" type="Node2D" groups=["Flaque"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.886275, 1, 1)
+scale = Vector2(0.148, 0.148)
+texture = ExtResource("1_y8kb4")
+
+[node name="DetectCollision" type="Node2D" parent="."]
+script = ExtResource("2_nhgqj")
+collide_with = Array[String](["NotWaterProof"])
+radius = 35.0
+
+[node name="DeleteParent" type="Node" parent="."]
+script = ExtResource("3_n5k28")
+
+[node name="DestroyEntity" type="Node" parent="."]
+script = ExtResource("4_mfs7n")
+
+[connection signal="collision_detected" from="DetectCollision" to="DeleteParent" method="delete_parent"]
+[connection signal="collision_detected_entity" from="DetectCollision" to="DestroyEntity" method="destroy_entity"]

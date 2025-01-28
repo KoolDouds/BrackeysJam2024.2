@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://s3ul4ha0vxbf"]
+
+[ext_resource type="Script" path="res://Prefabs/MeteorGFX.gd" id="1_5nnox"]
+
+[node name="TextureRect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_5nnox")
+col = null

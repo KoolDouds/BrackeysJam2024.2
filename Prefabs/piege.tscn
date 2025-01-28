@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://wuqt6qfc6wsn"]
+
+[ext_resource type="Script" path="res://Prefabs/piege.gd" id="1_it65i"]
+[ext_resource type="Texture2D" uid="uid://ou2b43r3iwyx" path="res://Images/UI/piege.png" id="2_5dwuj"]
+[ext_resource type="Script" path="res://Script/DetectCollision.gd" id="3_hr6kh"]
+[ext_resource type="Script" path="res://DeleteParent.gd" id="4_8bqi4"]
+[ext_resource type="Script" path="res://DestroyEntity.gd" id="5_vr7gh"]
+[ext_resource type="AudioStream" uid="uid://ib6tojewmd8g" path="res://Son/SFX/Build.wav" id="6_fax45"]
+[ext_resource type="AudioStream" uid="uid://sl1wwtuagqsv" path="res://Son/SFX/Collect.wav" id="7_2nf31"]
+
+[node name="Piege" type="Node2D" groups=["Piege"]]
+script = ExtResource("1_it65i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.760784, 0, 1)
+scale = Vector2(0.204, 0.204)
+texture = ExtResource("2_5dwuj")
+
+[node name="DetectCollision2" type="Node2D" parent="."]
+script = ExtResource("3_hr6kh")
+collide_with = Array[String](["NotWaterProof"])
+radius = 60.0
+
+[node name="DetectCollision" type="Node2D" parent="."]
+script = ExtResource("3_hr6kh")
+collide_with = Array[String](["NotWaterProof"])
+radius = 50.0
+
+[node name="DeleteParent" type="Node" parent="."]
+script = ExtResource("4_8bqi4")
+
+[node name="DestroyEntity" type="Node" parent="."]
+script = ExtResource("5_vr7gh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fax45")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_2nf31")
+autoplay = true
+
+[connection signal="build_finished" from="." to="AudioStreamPlayer" method="play"]
+[connection signal="collision_detected" from="DetectCollision2" to="DeleteParent" method="delete_parent"]
+[connection signal="collision_detected" from="DetectCollision" to="DeleteParent" method="delete_parent"]
+[connection signal="collision_detected_entity" from="DetectCollision" to="DestroyEntity" method="destroy_entity"]
